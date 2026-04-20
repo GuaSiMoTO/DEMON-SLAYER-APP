@@ -1,16 +1,65 @@
-# React + Vite
+# Demon Slayer App 👹⚔️
+¡Bienvenido a la Demon Slayer App! Una aplicación web construida con React JS y Vite que consume la API de Kimetsu no Yaiba para mostrar información detallada sobre los personajes de la serie.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Características
+Listado de personajes: Navegación paginada para explorar todos los personajes.
 
-Currently, two official plugins are available:
+Búsqueda avanzada: Funcionalidad para buscar personajes específicos por nombre.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Navegación fluida: Uso de react-router-dom para una experiencia de usuario sin recargas.
 
-## React Compiler
+Estilos Modulares: Uso de CSS Modules para evitar conflictos de estilos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Custom Hooks: Lógica de fetching encapsulada y reutilizable.
 
-## Expanding the ESLint configuration
+## 📂 Estructura del Proyecto
+```markdown
+REACT-PROYECTO/
+├── public/
+│   └── demon-logo.png          # Logo principal de la app
+├── src/
+│   ├── components/
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.jsx      # Componente de navegación
+│   │   │   └── Navbar.module.css
+│   │   ├── CharacterCard.jsx   # Card individual de personaje
+│   │   ├── CharacterList.jsx   # Grid/Lista de personajes
+│   │   ├── FilterBar.jsx       # Barra de filtrado por categorías
+│   │   └── SearchBar.jsx       # Input de búsqueda dinámica
+│   ├── context/                # Proveedores de estado global
+│   ├── hooks/
+│   │   └── useDemonSearch.js   # Hook para consumo de la API
+│   ├── App.jsx                 # Definición de rutas y layout
+│   ├── main.jsx                # Punto de entrada (Render)
+│   ├── global.css              # Variables y estilos base
+│   └── index.css               # Estilos generales
+├── .env                        # Variables de entorno (API URL)
+.
+.
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologías Utilizadas
+
+- React 18 (Vite)
+
+- React Router DOM (Navegación)
+
+- CSS Modules (Estilos específicos)
+
+- Fetch API (Consumo de datos)
+
+## Configuración del Entorno
+
+Para que la aplicación funcione correctamente, necesitas configurar la URL de la API. Crea un archivo .env en la raíz del proyecto:
+ 
+VITE_DEMON_SLAYER_API=https://www.demonslayer-api.com/api/v1/characters
+
+## Lógica Principal: useDemonSearch
+
+El núcleo de la aplicación reside en el hook personalizado useDemonSearch, el cual gestiona:
+
+- Paginación: Permite saltar entre las diferentes páginas de la API.
+
+- Estados de carga: Controla los estados de loading, error y characters.
+
+- Seguridad: Valida la existencia de variables de entorno antes de realizar peticiones.

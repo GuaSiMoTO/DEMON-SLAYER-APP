@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 32px;
+  background-color: black; /* fondo negro */
+}
+
+/* LOGO */
+.logoImg {
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
+}
+
+/* MENÚ */
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* LINKS */
+.menu a {
+  text-decoration: none;
+  color: white; /* letras blancas */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #ccc;
+}

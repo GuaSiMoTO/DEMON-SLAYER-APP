@@ -1,0 +1,10 @@
+/* Box-sizing: queremos que padding y border se incluyan dentro del width/height */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Elimina márgenes y paddings por defecto del navegador */
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+}
