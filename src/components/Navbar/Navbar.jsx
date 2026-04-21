@@ -19,10 +19,10 @@ function Navbar() {
           <NavLink to="/Home">INICIO</NavLink>
         </li>
         <li>
-          <NavLink to="/search">BUSCAR</NavLink>
+          <NavLink to="/searchpage">BUSCAR</NavLink>
         </li>
         <li>
-          <NavLink to="/characters">PERSONAJES</NavLink>
+          <NavLink to="/characterlist">PERSONAJES</NavLink>
         </li>
       </ul>
 

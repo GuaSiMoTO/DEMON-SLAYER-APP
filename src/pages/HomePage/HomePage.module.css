@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center;
   /* Centrado arriba */
-  min-height: 765px; /* Ajusta la altura de la sección */
+  min-height: 900px; /* Ajusta la altura de la sección */
   display: flex;
   flex-direction: column;
   align-items: center;     /* Centra horizontalmente */

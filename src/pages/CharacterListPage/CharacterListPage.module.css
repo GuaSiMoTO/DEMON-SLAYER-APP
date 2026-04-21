@@ -1,0 +1,73 @@
+/* CharacterListPage CSS */
+.CharacterListPage {
+  /* Fondo de pantalla con overlay oscuro para que el texto resalte */
+  background: url('../../../public/demon-slayer-pattern.jpeg');        
+  background-size: cover;
+  background-position: center;
+  /* Centrado arriba */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Centra horizontalmente */
+  justify-content: flex-start; /* Alinea al inicio (arriba) */
+  padding-top: 60px;       /* Espacio desde el borde superior */
+  text-align: center;
+  color: white;
+}
+
+.pagination { 
+  display: flex; 
+  gap: 10px; 
+  justify-content: center; 
+  margin-top: 30px; 
+  padding: 20px;
+}
+
+.pagination button { 
+  padding: 8px 15px; 
+  cursor: pointer; 
+  border: 1px solid #ccc;
+  background: white;
+  transition: 0.3s;
+}
+
+/* El botón de la página donde estás parado */
+.pagination button.active { 
+  background-color: #e63946; /* Rojo Demon Slayer */
+  color: white; 
+  border-color: #e63946;
+  font-weight: bold; 
+}
+
+.pagination button:disabled { 
+  opacity: 0.3; 
+  cursor: not-allowed; 
+}
+
+.pagination button:hover {
+  background-color: var(--gold-text);
+}
+
+/* Contenedor que envuelve a todas las tarjetas */
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px; /* Suficiente espacio para dos tarjetas de 550px + gap */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  /* Si quieres que todo el fondo sea transparente o tenga una imagen de fondo */
+  background: transparent; 
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
