@@ -16,13 +16,13 @@ function Navbar() {
       {/* MENÚ */}
       <ul className={styles.menu}>
         <li>
-          <NavLink to="/Home">INICIO</NavLink>
+          <NavLink to="/Home">HOME</NavLink>
         </li>
         <li>
-          <NavLink to="/searchpage">BUSCAR</NavLink>
+          <NavLink to="/searchpage">SEARCH</NavLink>
         </li>
         <li>
-          <NavLink to="/characterlist">PERSONAJES</NavLink>
+          <NavLink to="/characterlist">CHARACTERS</NavLink>
         </li>
       </ul>
 

@@ -22,3 +22,14 @@
   font-family: 'Playfair Display', serif;
   
 }
+
+/* Esto afectará a toda la aplicación */
+body {
+  margin: 0;
+  padding: 0;
+  /* El fondo se queda fijo mientras haces scroll */
+  background: url('../public/demon-slayer-pattern.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 110vh;
+}

@@ -1,9 +1,5 @@
 /* CharacterListPage CSS */
 .CharacterListPage {
-  /* Fondo de pantalla con overlay oscuro para que el texto resalte */
-  background: url('../../../public/demon-slayer-pattern.jpeg');        
-  background-size: cover;
-  background-position: center;
   /* Centrado arriba */
   display: flex;
   flex-direction: column;
@@ -70,4 +66,38 @@
   justify-content: center;
   margin-top: 40px;
   width: 100%;
+}
+
+/* LOGO DE LOADING*/
+.loading-container {
+  /* Usamos fixed para que flote por encima de todo y no mueva la paginación */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  display: flex;
+  /* IMPORTANTE: Esto pone los elementos en columna (uno debajo de otro) */
+  flex-direction: column; 
+  justify-content: center; /* Centra verticalmente */
+  align-items: center;     /* Centra horizontalmente */
+  
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para resaltar */
+  z-index: 9999; /* Valor muy alto para que nada lo tape */
+}
+
+.loading-img {
+  width: 150px;        /* Aquí manejas el tamaño que quieras */
+  height: auto;        /* Mantiene la proporción */
+  /* Opcional: un filtro dorado si es un icono blanco */
+  /* filter: drop-shadow(0 0 10px #ffd700); */
+} 
+
+.loading-container p {
+  color: var(--gold-text); /* Dorado para que combine con tus nombres */
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-top: 20px;
+  margin: 0;
 }

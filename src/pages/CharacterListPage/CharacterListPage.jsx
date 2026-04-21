@@ -8,12 +8,12 @@ export default function CharacterListPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 9; // Supongamos que la API tiene 20 páginas
 
-  // 1. Efecto para disparar la búsqueda cuando cambie la página
+  // para disparar la búsqueda cuando cambie la página
   useEffect(() => {
     search({ page: currentPage });
   }, [currentPage, search]);
 
-  // 2. Lógica para los números de página (Ventana deslizante)
+  // Lógica para los números de página (Ventana deslizante)
   const renderPageNumbers = () => {
     const pages = [];
     const range = 2; // Cuántos números mostrar a los lados de la página actual
@@ -43,38 +43,55 @@ export default function CharacterListPage() {
   return (
     <main className={styles.CharacterListPage}>
       <div className={styles.container}>
-        {loading && <p>Cargando personajes...</p>}
-        {error && <p>{error}</p>}
-
-        <div className={styles["list-container"]}>
-          {characters.map((char) => (
-            <CharacterCard key={char.id} character={char} />
-          ))}
-        </div>
-
-        {/* --- PAGINACIÓN --- */}
-        <div className={styles["pagination-wrapper"]}>
-          <div className={styles.pagination}>
-            <button
-              className={styles.button}
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage((prev) => prev - 1)}
-            >
-              &lt;&lt;
-            </button>
-
-            {renderPageNumbers()}
-
-            <button
-              className={styles.button}
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage((prev) => prev + 1)}
-            >
-              &gt;&gt;
-            </button>
+        {/* 1. Si está cargando, mostramos el logo */}
+        {loading && (
+          <div className={styles["loading-container"]}>
+            <img
+              src="/demon-logo.png" // Logo Demon-slayer para mostrar mientras se carga
+              alt="Cargando..."
+              className={styles["loading-img"]}
+            />
+            <p>LOADING CHARACTERS...</p>
           </div>
-        </div>
+        )}
+
+        {/* SI NO está cargando Y no hay error, mostramos el contenido */}
+        {!loading && !error && (
+          <>
+            <div className={styles["list-container"]}>
+              {characters.map((char) => (
+                <CharacterCard key={char.id} character={char} />
+              ))}
+            </div>
+
+            {/* --- PAGINACIÓN --- (Ahora dentro de la condición) para que no se vea mientras está cargando*/}
+            <div className={styles["pagination-wrapper"]}>
+              <div className={styles.pagination}>
+                <button
+                  className={styles.button}
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                >
+                  &lt;&lt;
+                </button>
+
+                {renderPageNumbers()}
+
+                <button
+                  className={styles.button}
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                >
+                  &gt;&gt;
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+
+        {error && <p className={styles.error}>{error}</p>}
       </div>
+      );
     </main>
   );
 }
