@@ -1,3 +1,16 @@
+:root {
+    /* Colores Principales */
+    --primary-red: #9e2a18;       /* Rojo del banner de Spotify */
+    --dark-red: #7a1f12;          /* Rojo oscuro de la lista de canciones */
+    --gold-text: #d4b170;         /* Dorado de "BLU-RAY" y diamantes */
+    
+    /* Fondos y Neutros */
+    --bg-dark: #0a0a0a;           /* Fondo casi negro del header */
+    --text-white: #ffffff;        /* Blanco puro para títulos */
+    --text-gray: #a0a0a0;         /* Gris para nombres de artistas (LiSA, Aimer) */
+    
+}
+
 /* Box-sizing: queremos que padding y border se incluyan dentro del width/height */
 *,
 *::before,

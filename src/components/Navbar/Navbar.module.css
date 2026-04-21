@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 32px;
+  padding: 10px 30px;
   background-color: black; /* fondo negro */
 }
 
@@ -28,6 +28,15 @@
   transition: color 0.3s ease;
 }
 
-.menu a:hover {
-  color: #ccc;
+.user span{
+  cursor: pointer;
+  color:white;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
+
+.menu a:hover,
+.user span:hover {
+  color: var(--gold-text);
+}
+

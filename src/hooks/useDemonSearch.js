@@ -15,6 +15,8 @@ export function useDemonSearch() {
   //   Buscamos por número de páginas, por defecto pagina 1
 
   const search = useCallback(async (page = 1) => {
+    console.log("Ejecutando búsqueda, página:", page);
+    console.log( "en Demon search page", page); //Comprobar la API
     // Si API_BASE es undefined, ni siquiera intentamos el fetch
     if (!API_BASE) {
       setError("Error: La URL de la API no está configurada en el .env");
@@ -40,6 +42,7 @@ export function useDemonSearch() {
         throw new Error(`Error HTTP: ${response.status}`);
       }
       const data = await response.json();
+      console.log( "en Demon search data", data); //Comprobar la API
 
       if (data && data.content) {
         // Éxito: guardamos los resultados
@@ -61,7 +64,7 @@ export function useDemonSearch() {
       */
       setLoading(false);
     }
-  }, []); // Sin dependencias: la función no depende de estado externo
+  }, [API_BASE]); // Sin dependencias: la función no depende de estado externo
 
   /* ── Valores devueltos por el hook ───────────────────────────────────── */
   return { characters, loading, error, search };
@@ -76,6 +79,25 @@ export async function fetchCharacterByName(characterName) {
   const url = `${API_BASE}?name=${characterName}`;
   const response = await fetch(url);
 
+  console.log("la url en NAME",url); //Comprobar la API
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  if (data.content && data.content.length > 0) {
+    return data; // Objeto con todos los detalles del personaje
+  }
+
+  throw new Error("Personaje no encontrada");
+}
+
+export async function fetchCharacterByRace(characterRace) {
+  const url = `${API_BASE}?race=${characterRace}`;
+  const response = await fetch(url);
+
+  console.log("la url en RACE es",url); //Comprobar la API
   if (!response.ok) {
     throw new Error(`Error HTTP: ${response.status}`);
   }

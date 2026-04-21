@@ -1,0 +1,84 @@
+/* HomePage.module.css */
+
+.hero {
+  /* Fondo de pantalla con overlay oscuro para que el texto resalte */
+  background: url('../../../public/demon-slayer-pattern.jpeg');        
+  background-size: cover;
+  background-position: center;
+  /* Centrado arriba */
+  min-height: 765px; /* Ajusta la altura de la sección */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Centra horizontalmente */
+  justify-content: flex-start; /* Alinea al inicio (arriba) */
+  padding-top: 60px;       /* Espacio desde el borde superior */
+  text-align: center;
+  color: white;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  color: var(--gold-text); /* El dorado de BLU-RAY */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  max-width: 600px; /* Evita que el texto se estire demasiado */
+  line-height: 1.6;
+  color: #ffffff;
+  opacity: 0.9;
+  padding: 0 20px;
+}
+
+/* Contenedor del slider */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 50px 20px;
+  cursor: pointer;
+}
+
+/* Ocultar scroll feo */
+.hero-image::-webkit-scrollbar {
+  display: none;
+}
+
+/* Imágenes */
+.hero-image img {
+  flex: 0 0 auto;
+  width: 200px;
+  height: auto;
+
+  border-radius: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+/* Imagen centrada destacada */
+.hero-image img:focus,
+.hero-image img:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* BUTTON HOMEPAGE */
+.button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 0; /* completamente rectangular */
+  padding: 10px 20px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--gold-text);
+}

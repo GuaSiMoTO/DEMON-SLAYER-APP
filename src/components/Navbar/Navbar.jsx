@@ -8,7 +8,7 @@ function Navbar() {
     <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.logo}>
-        <NavLink to="/">
+        <NavLink to="/Home">
           <img src={ logo } alt="Logo" className={styles.logoImg} />
         </NavLink>
       </div>
@@ -16,7 +16,7 @@ function Navbar() {
       {/* MENÚ */}
       <ul className={styles.menu}>
         <li>
-          <NavLink to="/">INICIO</NavLink>
+          <NavLink to="/Home">INICIO</NavLink>
         </li>
         <li>
           <NavLink to="/search">BUSCAR</NavLink>
@@ -25,6 +25,12 @@ function Navbar() {
           <NavLink to="/characters">PERSONAJES</NavLink>
         </li>
       </ul>
+
+
+      {/* USER */}
+      <div className={styles.user}>
+        <span>USER</span>
+      </div>
 
     </nav>
   );
