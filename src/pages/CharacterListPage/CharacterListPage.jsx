@@ -91,7 +91,6 @@ export default function CharacterListPage() {
 
         {error && <p className={styles.error}>{error}</p>}
       </div>
-      );
     </main>
   );
 }
