@@ -6,14 +6,14 @@ import styles from "./CharacterListPage.module.css";
 export default function CharacterListPage() {
   const { characters, loading, error, search } = useCharacterSearch();
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 9; // Supongamos que la API tiene 20 páginas
+  const totalPages = 9; // la API tiene 9 páginas x 5 personajes cada página
 
   // para disparar la búsqueda cuando cambie la página
   useEffect(() => {
     search({ page: currentPage });
   }, [currentPage, search]);
 
-  // Lógica para los números de página (Ventana deslizante)
+  // Lógica para los números de la paginación
   const renderPageNumbers = () => {
     const pages = [];
     const range = 2; // Cuántos números mostrar a los lados de la página actual
@@ -64,7 +64,7 @@ export default function CharacterListPage() {
               ))}
             </div>
 
-            {/* --- PAGINACIÓN --- (Ahora dentro de la condición) para que no se vea mientras está cargando*/}
+            {/* --- PAGINACIÓN con botones --- dentro de la condición para que no se vea mientras está cargando*/}
             <div className={styles["pagination-wrapper"]}>
               <div className={styles.pagination}>
                 <button

@@ -7,12 +7,12 @@ const API_BASE = import.meta.env.VITE_DEMON_SLAYER_API;
 export default function useCharacterSearch() {
   /* ── Estado local del hook ──────────────────────────────────────────── */
   const [characters, setCharacters] = useState([]); // Resultados de la búsqueda
-  const [loading, setLoading] = useState(false); // ¿Petición en vuelo?
+  const [loading, setLoading] = useState(false); 
   const [error, setError] = useState(null); // Mensaje de error
 
   /* ── Función de búsqueda ─────────────────────────────────────────────── */
 
-  //   Buscamos por número de páginas, por defecto pagina 1
+  //   Buscamos por número de páginas, por name, por race o por combat_style (por defecto pagina 1)
 
   const search = useCallback(
     async ({ page = 1, name = '', race = '', combat_style = '' } = {}) => { //por si llaman a search sin parámetros válidos
