@@ -4,9 +4,9 @@ import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import styles from "./CharacterListPage.module.css";
 
 export default function CharacterListPage() {
-  const { characters, loading, error, search } = useCharacterSearch();
+  const { characters, totalPages, loading, error, search } = useCharacterSearch();
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 9; // la API tiene 9 páginas x 5 personajes cada página
+  // la API tiene 9 páginas x 5 personajes cada página
 
   // para disparar la búsqueda cuando cambie la página
   useEffect(() => {

@@ -8,7 +8,7 @@ function Navbar() {
     <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.logo}>
-        <NavLink to="/Home">
+        <NavLink to="/">
           <img src={ logo } alt="Logo" className={styles.logoImg} />
         </NavLink>
       </div>
@@ -16,7 +16,7 @@ function Navbar() {
       {/* MENÚ */}
       <ul className={styles.menu}>
         <li>
-          <NavLink to="/Home">HOME</NavLink>
+          <NavLink to="/">HOME</NavLink>
         </li>
         <li>
           <NavLink to="/searchpage">SEARCH</NavLink>

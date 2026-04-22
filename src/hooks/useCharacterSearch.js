@@ -9,6 +9,7 @@ export default function useCharacterSearch() {
   const [characters, setCharacters] = useState([]); // Resultados de la búsqueda
   const [loading, setLoading] = useState(false); 
   const [error, setError] = useState(null); // Mensaje de error
+  const[totalPages, setTotalPages] = useState(0);
 
   /* ── Función de búsqueda ─────────────────────────────────────────────── */
 
@@ -41,17 +42,20 @@ export default function useCharacterSearch() {
         const data = await response.json();
     
 
-        if (data && data.content) {
+        if (data && data.content && data.pagination.totalPages) {
           // Éxito: guardamos los resultados
           setCharacters(data.content);
+          setTotalPages(data.pagination.totalPages);
         } else {
           // La API nos indica que no encontró resultados
           setError("No se encontraron resultados");
           setCharacters([]);
+          setTotalPages(0);
         }
       } catch (err) {
         setError("Error al conectar con la API. Comprueba tu conexión.");
         setCharacters([]);
+        setTotalPages(0);
 
         console.error("useDemonSearch error:", err); // Log para debugging
       } finally {
@@ -66,5 +70,5 @@ export default function useCharacterSearch() {
   ); // Sin dependencias: la función no depende de estado externo
 
   /* ── Valores devueltos por el hook ───────────────────────────────────── */
-  return { characters, loading, error, search };
+  return { characters, totalPages, loading, error, search };
 }

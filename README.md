@@ -73,7 +73,7 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | Categoría | Tarea | Tiempo Invertido | Estado |
 | :--- | :--- | :---: | :---: |
 | **API** | Configuración de archivo `.env` y conexión API | 15m | ✅ Hecho |
-| **API** | Consumo y mapeo de datos de la API | 1h 50m | ✅ Hecho |
+| **API** | Consumo y mapeo de datos de la API | 2h 10m | ✅ Hecho |
 | **API** | Refactorizar funciones de llamada a la API | 1h | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de Navbar | 56m 40s | 🔍 Revisar |
 | **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | 🚀 A mejorar |
@@ -81,11 +81,11 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Interfaz** | Favicon del proyecto | 7m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
 | **Layout** | Tarjeta central de `Characterdetailpage` | -- | 🚧 En progreso |
-| **Estilos** | CSS de `Characterlistpage` | -- | ✅ Hecho |
+| **Estilos** | CSS de `Characterlistpage` | 2h | ✅ Hecho |
 | **Estilos** | CSS de `Characterdetailpage` | -- | 🚧 En progreso |
 
 ### 📊 Resumen de Esfuerzo
-* **Tiempo total registrado:** ~ 8h (sumar al final y cambiar este valor)
+* **Tiempo total registrado:** ~ 9h (sumar al final y cambiar este valor)
 * **Última actualización:** 22 de mayo de 2024
 
 ---
