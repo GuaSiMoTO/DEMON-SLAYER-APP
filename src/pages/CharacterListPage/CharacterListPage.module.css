@@ -10,48 +10,36 @@
   color: white;
 }
 
-.pagination { 
-  display: flex; 
-  gap: 10px; 
-  justify-content: center; 
-  margin-top: 30px; 
-  padding: 20px;
-}
-
-.pagination button { 
-  padding: 8px 15px; 
-  cursor: pointer; 
-  border: 1px solid #ccc;
-  background: white;
-  transition: 0.3s;
-}
-
-/* El botón de la página donde estás parado */
-.pagination button.active { 
-  background-color: #e63946; /* Rojo Demon Slayer */
-  color: white; 
-  border-color: #e63946;
-  font-weight: bold; 
-}
-
-.pagination button:disabled { 
-  opacity: 0.3; 
-  cursor: not-allowed; 
-}
-
-.pagination button:hover {
-  background-color: var(--gold-text);
-}
-
 /* Contenedor que envuelve a todas las tarjetas */
 .list-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap;       /* Permite que los elementos salten de fila */
+  justify-content: center; /* CENTRA los elementos de la última fila */
   gap: 30px;
-  max-width: 1200px; /* Suficiente espacio para dos tarjetas de 550px + gap */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+/* Las primeras 3 tarjetas */
+/* Todas las tarjetas (hijos directos) iguales */
+.list-container > div {
+  /* Calculamos el ancho para que quepan exactamente 3 por fila */
+  /* (100% / 3) menos el espacio proporcional del gap */
+  flex: 0 1 calc(33.33% - 30px); 
+  
+  /* Un ancho mínimo para que no se vean muy flacas en pantallas medianas */
+  min-width: 300px; 
+  
+  /* Aseguramos que todas midan lo mismo de alto si el contenido varía */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Opcional: Si quieres que las de abajo no se estiren NADA 
+   aunque tengan espacio, esto asegura que mantengan el tamaño de las de arriba */
+.list-container > div:nth-child(n+4) {
+  max-width: calc(33.33% - 30px);
 }
 
 .container {
@@ -59,13 +47,6 @@
   min-height: 100vh;
   /* Si quieres que todo el fondo sea transparente o tenga una imagen de fondo */
   background: transparent; 
-}
-
-.pagination-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  width: 100%;
 }
 
 /* LOGO DE LOADING*/
@@ -100,4 +81,45 @@
   letter-spacing: 2px;
   padding-top: 20px;
   margin: 0;
+}
+
+/* Paginación */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.pagination { 
+  display: flex; 
+  gap: 10px; 
+  justify-content: center; 
+  margin-top: 30px; 
+  padding: 20px;
+}
+
+.pagination button { 
+  padding: 8px 15px; 
+  cursor: pointer; 
+  border: 1px solid #ccc;
+  background: white;
+  transition: 0.3s;
+}
+
+/* El botón de la página donde estás parado */
+.pagination button.active { 
+  background-color: #e63946; /* Rojo Demon Slayer */
+  color: white; 
+  border-color: #e63946;
+  font-weight: bold; 
+}
+
+.pagination button:disabled { 
+  opacity: 0.3; 
+  cursor: not-allowed; 
+}
+
+.pagination button:hover {
+  background-color: var(--gold-text);
 }

@@ -81,7 +81,7 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Interfaz** | Favicon del proyecto | 7m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
 | **Layout** | Tarjeta central de `Characterdetailpage` | -- | 🚧 En progreso |
-| **Estilos** | CSS de `Characterlistpage` | 2h | ✅ Hecho |
+| **Estilos** | CSS de `Characterlistpage` | 2h 12m | ✅ Hecho |
 | **Estilos** | CSS de `Characterdetailpage` | -- | 🚧 En progreso |
 
 ### 📊 Resumen de Esfuerzo

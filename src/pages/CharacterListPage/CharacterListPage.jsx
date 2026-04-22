@@ -1,23 +1,27 @@
-import { useState, useEffect } from "react";
-import useCharacterSearch from "../../hooks/useCharacterSearch"; // Tu hook
+// pages/CharacterListPage/CharacterListPage.jsx
+import { useState, useEffect, useContext } from "react"; 
+import { CharacterContext } from "../../context/CharacterContext"; // Importamos el Contexto
+import useCharacterSearch from "../../hooks/useCharacterSearch"; 
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import styles from "./CharacterListPage.module.css";
 
 export default function CharacterListPage() {
-  const { characters, totalPages, loading, error, search } = useCharacterSearch();
-  const [currentPage, setCurrentPage] = useState(1);
-  // la API tiene 9 páginas x 5 personajes cada página
+  // Extraemos los DATOS del Contexto
+  const { characters, totalPages, loading, error } = useContext(CharacterContext);
+  
+  // Extraemos la ACCIÓN (función) del Hook
+  const { search } = useCharacterSearch();
 
-  // para disparar la búsqueda cuando cambie la página
+  const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
     search({ page: currentPage });
   }, [currentPage, search]);
 
-  // Lógica para los números de la paginación
+  // Lógica para los números de la paginación (Se queda igual)
   const renderPageNumbers = () => {
     const pages = [];
-    const range = 2; // Cuántos números mostrar a los lados de la página actual
-
+    const range = 2;
     for (
       let i = Math.max(1, currentPage - range);
       i <= Math.min(totalPages, currentPage + range);
@@ -27,11 +31,7 @@ export default function CharacterListPage() {
         <button
           key={i}
           onClick={() => setCurrentPage(i)}
-          className={
-            currentPage === i
-              ? `${styles.button} ${styles.active}`
-              : styles.button
-          }
+          className={currentPage === i ? `${styles.button} ${styles.active}` : styles.button}
         >
           {i}
         </button>,
@@ -43,19 +43,14 @@ export default function CharacterListPage() {
   return (
     <main className={styles.CharacterListPage}>
       <div className={styles.container}>
-        {/* 1. Si está cargando, mostramos el logo */}
+        
         {loading && (
           <div className={styles["loading-container"]}>
-            <img
-              src="/demon-logo.png" // Logo Demon-slayer para mostrar mientras se carga
-              alt="Cargando..."
-              className={styles["loading-img"]}
-            />
+            <img src="/demon-logo.png" alt="Cargando..." className={styles["loading-img"]} />
             <p>LOADING CHARACTERS...</p>
           </div>
         )}
 
-        {/* SI NO está cargando Y no hay error, mostramos el contenido */}
         {!loading && !error && (
           <>
             <div className={styles["list-container"]}>
@@ -64,7 +59,6 @@ export default function CharacterListPage() {
               ))}
             </div>
 
-            {/* --- PAGINACIÓN con botones --- dentro de la condición para que no se vea mientras está cargando*/}
             <div className={styles["pagination-wrapper"]}>
               <div className={styles.pagination}>
                 <button

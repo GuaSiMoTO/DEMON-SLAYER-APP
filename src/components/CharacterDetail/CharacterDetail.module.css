@@ -1,0 +1,44 @@
+/* Character Detail CSS */ 
+.character-detail img {
+  width: 50%; /* La imagen ocupa el 40% del ancho de la tarjeta */
+  height: 100%; /* Mantiene la altura de la tarjeta */
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.name {
+  padding: 20px;
+  width: 70%; /* El texto ocupa el 60% restante */
+}
+
+.name h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--gold-text); /* Dorado para el nombre */
+  display: inline-block;
+  text-align: center;
+}
+
+
+.info p {
+  font-size: 0.9rem;
+  color: var(--text-white);
+  margin: 5px 0;
+  text-align: center;
+}
+
+.description {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 10px !important;
+  text-align: left !important;
+}
+
+.quote {
+  margin-top: 15px;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-text);
+  font-size: 0.9rem;
+  color: var(--primary-red);
+  text-align: left;
+}

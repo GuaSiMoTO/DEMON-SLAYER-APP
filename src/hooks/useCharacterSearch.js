@@ -1,23 +1,20 @@
-import { useState, useCallback } from "react";
-
+import { useContext, useCallback } from "react";
+import { CharacterContext } from "../context/CharacterContext";
 /* ─── Constante: URL base de la API ─────────────────────────────────────── */
 
 const API_BASE = import.meta.env.VITE_DEMON_SLAYER_API;
 
 export default function useCharacterSearch() {
-  /* ── Estado local del hook ──────────────────────────────────────────── */
-  const [characters, setCharacters] = useState([]); // Resultados de la búsqueda
-  const [loading, setLoading] = useState(false); 
-  const [error, setError] = useState(null); // Mensaje de error
-  const[totalPages, setTotalPages] = useState(0);
-
-  /* ── Función de búsqueda ─────────────────────────────────────────────── */
+  // Extraemos las funciones para actualizar el estado del contexto
+  const { setCharacters, setLoading, setError, setTotalPages } =
+    useContext(CharacterContext);
 
   //   Buscamos por número de páginas, por name, por race o por combat_style (por defecto pagina 1)
 
   const search = useCallback(
-    async ({ page = 1, name = '', race = '', combat_style = '' } = {}) => { //por si llaman a search sin parámetros válidos
-     
+    async ({ page = 1, name = "", race = "", combat_style = "" } = {}) => {
+      //por si llaman a search sin parámetros válidos
+
       // Si API_BASE es undefined, ni siquiera intentamos el fetch
       if (!API_BASE) {
         setError("Error: La URL de la API no está configurada en el .env");
@@ -32,20 +29,25 @@ export default function useCharacterSearch() {
         // Construimos la URL con múltiples parámetros
         // Si un parámetro está vacío, la API generalmente lo ignora
         const url = `${API_BASE}?page=${page}&name=${name}&race=${race}&combat_style=${combat_style}`;
-        
         const response = await fetch(url);
-
         // Si la respuesta HTTP no es 2xx, lanzamos un error
         if (!response.ok) {
           throw new Error(`Error HTTP: ${response.status}`);
         }
         const data = await response.json();
-    
 
-        if (data && data.content && data.pagination.totalPages) {
-          // Éxito: guardamos los resultados
+        // Verificamos que 'content' exista y tenga datos
+        if (data && data.content && data.content.length > 0) {
+          // Guardamos los personajes (o el personaje único)
           setCharacters(data.content);
-          setTotalPages(data.pagination.totalPages);
+
+          /* 2. MANEJO DE LA PAGINACIÓN:
+          Si existe data.pagination, usamos sus totalPages.
+          Si NO existe (porque es un personaje único), ponemos 1 por defecto.
+          */
+          const total = data.pagination ? data.pagination.totalPages : 1;
+          setTotalPages(total);
+
         } else {
           // La API nos indica que no encontró resultados
           setError("No se encontraron resultados");
@@ -66,9 +68,9 @@ export default function useCharacterSearch() {
         setLoading(false);
       }
     },
-    [API_BASE],
-  ); // Sin dependencias: la función no depende de estado externo
+    [setCharacters, setLoading, setError, setTotalPages], // Dependencias del useCallback
+  );
 
-  /* ── Valores devueltos por el hook ───────────────────────────────────── */
-  return { characters, totalPages, loading, error, search };
+  /* devolvemos la función de buscar en el HOOK */
+  return { search };
 }
