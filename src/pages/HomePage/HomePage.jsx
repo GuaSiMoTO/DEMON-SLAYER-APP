@@ -13,10 +13,10 @@ export default function HomePage() {
         </p>
 
         <div className={styles["hero-image"]}>
-          <img src="../../public/Tanjiro.png" alt="Tanjiro"></img>
-          <img src="../../public/Nezuko.png" alt="Nezuko"></img>
-          <img src="../../public/Inosuke.png" alt="Inozuke"></img>
-          <img src="../../public/Zenitsu.png" alt="Zenitsu"></img>
+          <img src="/public/Tanjiro.png" alt="Tanjiro"></img>
+          <img src="/public/Nezuko.png" alt="Nezuko"></img>
+          <img src="/public/Inosuke.png" alt="Inozuke"></img>
+          <img src="/public/Zenitsu.png" alt="Zenitsu"></img>
         </div>
 
         <NavLink to="/characterlist">
