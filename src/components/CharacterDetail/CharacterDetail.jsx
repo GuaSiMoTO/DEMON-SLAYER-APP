@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom"; // lo usaremos solo en el button
 export default function CharacterDetail({ character }) {
   const navigate = useNavigate(); // Inicializamos la función para usar en el button BACK
   return (
-    /* Usamos corchetes porque 'character-card' tiene un guion */
+    /* Usamos corchetes porque 'character-detail' tiene un guion */
     <div className={styles["character-detail"]}>
       <img src={character.img} alt={character.name} />
 
-      <div className={styles.info}>
+      <div className={styles.name}>
         <h1>{character.name}</h1>
 
         <p>
