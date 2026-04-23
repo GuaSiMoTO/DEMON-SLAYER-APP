@@ -7,7 +7,6 @@ export default function CharacterCard({ character }) {
   
   const handleClick = () => {
     // Al hacer click, navegamos a la ruta de detalle pasando el nombre
-    // Usamos encodeURIComponent por si el nombre tiene espacios o caracteres especiales
     navigate(`/characterdetail/${character.name}`);
   };
 

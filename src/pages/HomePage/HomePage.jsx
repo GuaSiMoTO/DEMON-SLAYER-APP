@@ -6,7 +6,12 @@ import nezuko from '/public/Nezuko.png';
 import inosuke from '/public/Inosuke.png';
 import zenitsu from '/public/Zenitsu.png';
 
+import { useNavigate } from "react-router-dom"; // Importamos el hook de navegación
+
 export default function HomePage() {
+
+const navigate = useNavigate();
+
   return (
     <main className="container">
       {/* ── Cabecera de la página ─────────────────────────────────────── */}
@@ -18,10 +23,10 @@ export default function HomePage() {
         </p>
 
         <div className={styles["hero-image"]}>
-          <img src={tanjiro} alt="Tanjiro"></img>
-          <img src={nezuko} alt="Nezuko"></img>
-          <img src={inosuke} alt="Inozuke"></img>
-          <img src={zenitsu} alt="Zenitsu"></img>
+          <img src={tanjiro} alt="Tanjiro" onClick={() => navigate(`/characterdetail/${"tanjiro"}`)}></img>
+          <img src={nezuko} alt="Nezuko" onClick={() => navigate(`/characterdetail/${"nezuko"}`)}></img>
+          <img src={inosuke} alt="Inozuke" onClick={() => navigate(`/characterdetail/${"inosuke"}`)}></img>
+          <img src={zenitsu} alt="Zenitsu" onClick={() => navigate(`/characterdetail/${"Zenitsu"}`)}></img>
         </div>
 
         <NavLink to="/characterlist">
