@@ -1,5 +1,10 @@
 import styles from "./HomePage.module.css";
 import { NavLink } from 'react-router-dom';
+// importo las iamgenes de public
+import tanjiro from '/public/Tanjiro.png';
+import nezuko from '/public/Nezuko.png';
+import inosuke from '/public/Inosuke.png';
+import zenitsu from '/public/Zenitsu.png';
 
 export default function HomePage() {
   return (
@@ -13,10 +18,10 @@ export default function HomePage() {
         </p>
 
         <div className={styles["hero-image"]}>
-          <img src="/public/Tanjiro.png" alt="Tanjiro"></img>
-          <img src="/public/Nezuko.png" alt="Nezuko"></img>
-          <img src="/public/Inosuke.png" alt="Inozuke"></img>
-          <img src="/public/Zenitsu.png" alt="Zenitsu"></img>
+          <img src={tanjiro} alt="Tanjiro"></img>
+          <img src={nezuko} alt="Nezuko"></img>
+          <img src={inosuke} alt="Inozuke"></img>
+          <img src={zenitsu} alt="Zenitsu"></img>
         </div>
 
         <NavLink to="/characterlist">
