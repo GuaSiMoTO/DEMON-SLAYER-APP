@@ -1,19 +1,24 @@
-async function askGemini(prompt) {
-  //Traemos la API KEY de .env
-  const API_KEY = import.meta.env.VITE_API_GEMINI_KEY;
+const API_KEY = import.meta.env.VITE_API_GEMINI_KEY; //Traemos la API KEY de .env
+
+
+async function askGemini(answer) {
+
 
   const MODEL = "gemini-3-flash-preview"; 
   const URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
   
   // Opcional: Si el prompt viene vacío, no gastes una llamada a la API
-  if (!prompt) return "No me has enviado nada";
+  if (!answer) return "No me has enviado nada";
   
   // estructura del json que hay que enviarle a la API dentro está el prompt que llega como parámetro en la función
   const payload = {
     contents: [
       {
         parts: [
-          { text: prompt } // prompt aquí! tu mensaje para pasarselo a la IA
+          { text: `Role: Eres un experto y el mejor fan de Demon Slayer anime, te conoces todos los personajes y series.
+            Contesta a esta pregunta : ${answer}.
+            Instrucciones: contesta directo, breve, sin saludar y sin ninguna pregunta más.
+            Si te preguntan sobre otra cosa que no sea sobre el anime de DEMON SLAYER, recuerdales que solo contestas sobre el anime` } // prompt aquí! tu mensaje para pasarselo a la IA
         ]
       }
     ]
@@ -38,10 +43,15 @@ async function askGemini(prompt) {
     // La respuesta de Gemini viene en una estructura anidada:
     // candidates -> content -> parts -> [0].text
     const textResponse = data.candidates[0].content.parts[0].text; //aquí para obtener directamente el texto que te envia como respuesta la IA GEMINI
+   
     console.log("Tu respuesta de GEMINI:", textResponse); //esto es para imprimir la respuesta y ver funciona bien el return
+    
     return textResponse; // aqui devolvemos el resultado de la IA GEMINI directo ya en texto
 
   } catch (error) { // aqui tienes que cambiar los errores por los tuyos igual que añadir el finally: etc...
     console.error("Fallo al llamar a Gemini:", error);
+    throw error;
   }
 }
+
+export default askGemini;

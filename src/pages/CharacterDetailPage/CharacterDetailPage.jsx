@@ -20,13 +20,10 @@ export default function CharacterDetailPage() {
 }
   }, [name, search]);
 
- 
- 
-
    // Como la API devuelve un array, cogemos el primer resultado
   const character = characters[0];
-  console.log(character);
-  if(!character) return <p>CHARACTER NO FOUND</p>
+  
+  if(!character) return <p>CHARACTER NO FOUND EN CharacterDetail.jsx</p>
 
   return (
     <main className={styles.CharacterDetailPage}>
@@ -34,8 +31,8 @@ export default function CharacterDetailPage() {
         
         {loading && (
           <div className={styles["loading-container"]}>
-            <img src="/demon-logo.png" alt="Cargando..." className={styles["loading-img"]} />
-            <p>LOADING CHARACTER...</p>
+            <img src="/demon-logo.png" alt="Cargando" className={styles["loading-img"]} />
+            <p>LOADING...</p>
           </div>
         )}
 

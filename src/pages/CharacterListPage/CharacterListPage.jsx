@@ -1,4 +1,3 @@
-// pages/CharacterListPage/CharacterListPage.jsx
 import { useState, useEffect, useContext } from "react";
 import { CharacterContext } from "../../context/CharacterContext"; // Importamos el Contexto
 import useCharacterSearch from "../../hooks/useCharacterSearch";
@@ -58,7 +57,7 @@ export default function CharacterListPage() {
               alt="Cargando..."
               className={styles["loading-img"]}
             />
-            <p>LOADING CHARACTERS...</p>
+            <p>LOADING...</p>
           </div>
         )}
 

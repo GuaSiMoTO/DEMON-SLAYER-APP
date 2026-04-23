@@ -3,6 +3,7 @@ import Nabvar from './components/Navbar/Navbar'; // Mantengo tu nombre 'Nabvar'
 import HomePage from './pages/HomePage/HomePage';
 import CharacterListPage from './pages/CharacterListPage/CharacterListPage';
 import CharacterDetailPage from './pages/CharacterDetailPage/CharacterDetailPage';
+import ChatBotPage from './pages/ChatBotPage/ChatBotPage';
 
 // 1. Importamos el Provider que creamos
 import { CharacterProvider } from './context/CharacterContext'; 
@@ -16,11 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/characterlist" element={<CharacterListPage />} />
-        
-        {/* Cuando habilites estas rutas, ya tendrán acceso al contexto 
-           automáticamente gracias al Provider de arriba.
-        */}
-        {/* <Route path="/search" element={<SearchPage />} /> */}
+        <Route path="/chatbot" element={<ChatBotPage />} />
+       
         <Route path="/characterdetail/:name" element={<CharacterDetailPage />} />
       </Routes>
     </CharacterProvider>
