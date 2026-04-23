@@ -5,9 +5,8 @@
   flex-direction: column;
   align-items: center;     /* Centra horizontalmente */
   justify-content: flex-start; /* Alinea al inicio (arriba) */
-  padding-top: 60px;       /* Espacio desde el borde superior */
+  padding-top: 10px;       /* Espacio desde el borde superior */
   text-align: center;
-  color: white;
 }
 
 /* Contenedor que envuelve a todas las tarjetas */
@@ -84,42 +83,55 @@
 }
 
 /* Paginación */
+/* CONTENEDOR GENERAL */
 .pagination-wrapper {
+  position: fixed;
+  right: 100px;              /* separación del borde derecho */
+  top: 55%;
+  transform: translateY(-50%); /* centrado vertical */
+  z-index: 1000;
+}
+
+/* CONTENEDOR BOTONES */
+.pagination {
   display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  width: 100%;
+  flex-direction: column;   /* 🔥 clave: vertical */
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.4); /* opcional: fondo glass */
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
 }
 
-.pagination { 
-  display: flex; 
-  gap: 10px; 
-  justify-content: center; 
-  margin-top: 30px; 
-  padding: 20px;
-}
-
+/* BOTONES */
 .pagination button { 
-  padding: 8px 15px; 
+  width: 45px;
+  height: 45px;
+  padding: 0;
   cursor: pointer; 
   border: 1px solid #ccc;
   background: white;
   transition: 0.3s;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
-/* El botón de la página donde estás parado */
+/* ACTIVO */
 .pagination button.active { 
-  background-color: #e63946; /* Rojo Demon Slayer */
+  background-color: #e63946;
   color: white; 
   border-color: #e63946;
-  font-weight: bold; 
 }
 
+/* DISABLED */
 .pagination button:disabled { 
   opacity: 0.3; 
   cursor: not-allowed; 
 }
 
+/* HOVER */
 .pagination button:hover {
   background-color: var(--gold-text);
+  color: black;
 }

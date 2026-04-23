@@ -74,15 +74,16 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | :--- | :--- | :---: | :---: |
 | **API** | Configuración de archivo `.env` y conexión API | 15m | ✅ Hecho |
 | **API** | Consumo y mapeo de datos de la API | 2h 10m | ✅ Hecho |
-| **API** | Refactorizar funciones de llamada a la API | 1h | ✅ Hecho |
+| **API** | Refactorizar funciones de llamada a la API | 2h | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de Navbar | 56m 40s | 🔍 Revisar |
-| **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | 🚀 A mejorar |
-| **Interfaz** | Creación de tarjetas en `Characterlistpage` | 2h | 🚀 A mejorar |
+| **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | ✅ Hecho |
+| **Interfaz** | Creación de tarjetas en `Characterlistpage` | 2h 20m | ✅ Hecho |
+| **Interfaz** | Creación de tarjetas en `CharacterDetailpage` | 1h | ✅ Hecho |
 | **Interfaz** | Favicon del proyecto | 7m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
 | **Layout** | Tarjeta central de `Characterdetailpage` | -- | 🚧 En progreso |
-| **Estilos** | CSS de `Characterlistpage` | 2h 12m | ✅ Hecho |
-| **Estilos** | CSS de `Characterdetailpage` | -- | 🚧 En progreso |
+| **Estilos** | CSS de `Characterlistpage` | 2h 12 | ✅ Hecho |
+| **Estilos** | CSS de `Characterdetailpage` | 40m | ✅ Hecho |
 
 ### 📊 Resumen de Esfuerzo
 * **Tiempo total registrado:** ~ 9h (sumar al final y cambiar este valor)

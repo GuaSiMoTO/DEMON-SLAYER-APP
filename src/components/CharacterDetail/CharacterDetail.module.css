@@ -1,59 +1,124 @@
-/* Character Detail CSS */ 
-.character-detail img {
-  width: 50%; /* La imagen ocupa el 40% del ancho de la tarjeta */
-  height: 100%; /* Mantiene la altura de la tarjeta */
-  min-height: 250px;
+/* Contenedor Principal: Centrado absoluto en la pantalla */
+.character-detail {
+  display: flex;
+  flex-direction: row; /* Layout horizontal */
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1500px;
+  margin: 50px auto;
+  background: rgba(15, 15, 15, 0.95); /* Fondo oscuro profundo */
+  border: 1px solid var(--gold-text);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Contenedor de Imagen con efecto Hover */
+.image-container {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+  border-right: 2px solid var(--gold-text);
+}
+
+.character-detail img {
+  width: 40%;
+  height: 40%;
+  margin: 20px 10px;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Efecto Guerrero: Suponiendo que usas una clase para la imagen de transformación */
+/* Si solo tienes una etiqueta img, puedes hacer que cambie con un filtro o scale */
+/* .character-detail:hover img {
+  transform: scale(1.1);
+  filter: sepia(0.5) saturate(2) hue-rotate(-30deg); /* Simula transformación de poder 
+}*/
+
+/* Bloque de Contenido */
 .name {
-  padding: 20px;
-  width: 70%; /* El texto ocupa el 60% restante */
+  padding: 40px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
 }
 
 .name h1 {
   margin: 0;
-  font-size: 1.5rem;
-  color: var(--gold-text); /* Dorado para el nombre */
-  display: inline-block;
-  text-align: center;
+  font-size: 2.5rem;
+  color: var(--gold-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--primary-red);
+  margin-bottom: 10px;
 }
 
+.name p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
 
-.info p {
-  font-size: 0.9rem;
-  color: var(--text-white);
-  margin: 5px 0;
-  text-align: center;
+.name strong {
+  color: var(--gold-text);
 }
 
 .description {
-  font-size: 0.85rem;
-  line-height: 1.4;
-  margin-top: 10px !important;
-  text-align: left !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-white);
+  margin-bottom: 25px;
+  font-style: italic;
 }
 
+/* La Cita */
 .quote {
-  margin-top: 15px;
-  padding-left: 10px;
-  border-left: 3px solid var(--gold-text);
-  font-size: 0.9rem;
-  color: var(--primary-red);
-  text-align: left;
+  margin: 20px 0;
+  padding: 15px;
+  border-left: 4px solid var(--primary-red);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+  color: var(--gold-text);
+  font-weight: 300;
 }
 
-/* BUTTON DETAIL PAGE */
+/* Botón BACK: Posicionamiento */
 .button {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   background-color: white;
   color: black;
   border: none;
-  border-radius: 0; /* completamente rectangular */
-  padding: 10px 40px;
+  padding: 12px 30px;
   cursor: pointer;
-  font-weight: ;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 200px;
 }
 
 .button:hover {
   background-color: var(--gold-text);
+  padding-right: 25%; /* Efecto de desplazamiento */
+}
+
+/* Responsive para Móviles */
+@media (max-width: 768px) {
+  .character-detail {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .image-container, .name {
+    width: 100%;
+  }
+  .image-container {
+    height: 300px;
+    border-right: none;
+    border-bottom: 2px solid var(--gold-text);
+  }
 }

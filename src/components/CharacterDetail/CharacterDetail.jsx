@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"; // lo usaremos solo en el button
 // Función de las tarjetas de los personajes
 export default function CharacterDetail({ character }) {
   const navigate = useNavigate(); // Inicializamos la función para usar en el button BACK
+  
+
   return (
     /* Usamos corchetes porque 'character-detail' tiene un guion */
     <div className={styles["character-detail"]}>
@@ -17,8 +19,9 @@ export default function CharacterDetail({ character }) {
           {character.race}
           {character.age && (
             <>
-               {" "}   {/*espacio entre race y age */}
-              | <strong>Age:</strong> {character.age} 
+              {" "}
+              {/*espacio entre race y age */}| <strong>Age:</strong>{" "}
+              {character.age}
             </>
           )}
         </p>
@@ -26,7 +29,9 @@ export default function CharacterDetail({ character }) {
 
         <blockquote className={styles.quote}>"{character.quote}"</blockquote>
       </div>
-      <button className={styles.button} onClick={()=>navigate(-1)}>BACK</button>
+      <button className={styles.button} onClick={() => navigate(-1)}>
+        BACK
+      </button>
     </div>
   );
 }

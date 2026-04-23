@@ -19,7 +19,7 @@ function Navbar() {
           <NavLink to="/">HOME</NavLink>
         </li>
         <li>
-          <NavLink to="/searchpage">SEARCH</NavLink>
+          <NavLink to="/searchpage">DEMON SLAYER CHAT</NavLink>
         </li>
         <li>
           <NavLink to="/characterlist">CHARACTERS</NavLink>

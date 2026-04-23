@@ -1,18 +1,22 @@
 // pages/CharacterListPage/CharacterListPage.jsx
-import { useState, useEffect, useContext } from "react"; 
+import { useState, useEffect, useContext } from "react";
 import { CharacterContext } from "../../context/CharacterContext"; // Importamos el Contexto
-import useCharacterSearch from "../../hooks/useCharacterSearch"; 
+import useCharacterSearch from "../../hooks/useCharacterSearch";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import styles from "./CharacterListPage.module.css";
 
+import { useSearchParams } from "react-router-dom"; // para manejar bien la paginación
+
 export default function CharacterListPage() {
   // Extraemos los DATOS del Contexto
-  const { characters, totalPages, loading, error } = useContext(CharacterContext);
-  
+  const { characters, totalPages, loading, error } =
+    useContext(CharacterContext);
+
   // Extraemos la ACCIÓN (función) del Hook
   const { search } = useCharacterSearch();
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
     search({ page: currentPage });
@@ -30,8 +34,12 @@ export default function CharacterListPage() {
       pages.push(
         <button
           key={i}
-          onClick={() => setCurrentPage(i)}
-          className={currentPage === i ? `${styles.button} ${styles.active}` : styles.button}
+          onClick={() => setSearchParams({ page: i })}
+          className={
+            currentPage === i
+              ? `${styles.button} ${styles.active}`
+              : styles.button
+          }
         >
           {i}
         </button>,
@@ -43,10 +51,13 @@ export default function CharacterListPage() {
   return (
     <main className={styles.CharacterListPage}>
       <div className={styles.container}>
-        
         {loading && (
           <div className={styles["loading-container"]}>
-            <img src="/demon-logo.png" alt="Cargando..." className={styles["loading-img"]} />
+            <img
+              src="/demon-logo.png"
+              alt="Cargando..."
+              className={styles["loading-img"]}
+            />
             <p>LOADING CHARACTERS...</p>
           </div>
         )}
@@ -64,7 +75,7 @@ export default function CharacterListPage() {
                 <button
                   className={styles.button}
                   disabled={currentPage === 1}
-                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                  onClick={() => setSearchParams({ page: currentPage - 1 })}
                 >
                   &lt;&lt;
                 </button>
@@ -74,7 +85,7 @@ export default function CharacterListPage() {
                 <button
                   className={styles.button}
                   disabled={currentPage === totalPages}
-                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                  onClick={() => setSearchParams({ page: currentPage + 1 })}
                 >
                   &gt;&gt;
                 </button>
