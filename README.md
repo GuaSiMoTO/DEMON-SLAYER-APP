@@ -76,14 +76,17 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **API** | Consumo y mapeo de datos de la API | 2h 10m | ✅ Hecho |
 | **API** | Refactorizar funciones de llamada a la API | 2h | ✅ Hecho |
 | **API** | Hook llamda a la IA mediante API `useAskGemini` | 2h | ✅ Hecho |
-| **Interfaz** | Diseño e implementación de `Navbar` | 56m 40s | 🔍 Revisar |
-| **Interfaz** | Diseño e implementación de `ChatBotPage` | 1h | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `Navbar` | 56m | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `ChatBotPage` | 1h 20m | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `UserPage` | 1h 10m | ✅ Hecho |
 | **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | ✅ Hecho |
 | **Interfaz** | Creación de tarjetas en `Characterlistpage` | 2h 20m | ✅ Hecho |
 | **Interfaz** | Creación de tarjetas en `CharacterDetailpage` | 1h | ✅ Hecho |
 | **Interfaz** | Favicon del proyecto | 7m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
-| **Layout** | Tarjeta central de `Characterdetailpage` | -- | 🚧 En progreso |
+| **Layout** | Tarjeta central de `Characterdetailpage` | 1h 40m | ✅ Hecho |
+| **Estilos** | CSS de `ChatBotPage` | 1h | ✅ Hecho |
+| **Estilos** | CSS de `UserPage` | 1h 10m | ✅ Hecho |
 | **Estilos** | CSS de `Characterlistpage` | 2h 12 | ✅ Hecho |
 | **Estilos** | CSS de `Characterdetailpage` | 40m | ✅ Hecho |
 

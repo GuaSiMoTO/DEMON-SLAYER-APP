@@ -10,7 +10,7 @@ async function askGemini(answer) {
   // Opcional: Si el prompt viene vacío, no gastes una llamada a la API
   if (!answer) return "No me has enviado nada";
   
-  // estructura del json que hay que enviarle a la API dentro está el prompt que llega como parámetro en la función
+  // estructura del json que hay que enviarle a la API, dentro está el answer que llega como parámetro en la función
   const payload = {
     contents: [
       {
@@ -44,11 +44,9 @@ async function askGemini(answer) {
     // candidates -> content -> parts -> [0].text
     const textResponse = data.candidates[0].content.parts[0].text; //aquí para obtener directamente el texto que te envia como respuesta la IA GEMINI
    
-    console.log("Tu respuesta de GEMINI:", textResponse); //esto es para imprimir la respuesta y ver funciona bien el return
-    
     return textResponse; // aqui devolvemos el resultado de la IA GEMINI directo ya en texto
 
-  } catch (error) { // aqui tienes que cambiar los errores por los tuyos igual que añadir el finally: etc...
+  } catch (error) {
     console.error("Fallo al llamar a Gemini:", error);
     throw error;
   }

@@ -1,0 +1,84 @@
+.page {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 100px 20px;
+  gap: 20px;
+  opacity: 0.8;
+}
+
+.page h1 {
+  color: var(--gold-text);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.preview {
+  width: 210px;
+  height: 250px;
+  border-radius: 50%;
+  border: 3px solid var(--gold-text);
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px var(--gold-text)(255, 215, 0, 0.4);
+}
+
+.input {
+  width: 300px;
+  padding: 12px 16px;
+  background: #111;
+  border: 1px solid var(--gold-text);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+
+.input::placeholder {
+  color: var(--gold-text);
+}
+
+.input:focus {
+  border-color: var(--gold-text);
+  box-shadow: 0 0 8px rgba(255, 217, 0, 0.295);
+}
+
+.btn,
+.btnreset {
+  margin-top: 24px;
+  padding: 12px 30px;
+  background: #8b0000;
+  color: #ffffff;
+  border: none;
+
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+.btn:hover,
+.btnreset:hover {
+  background: #b22222;
+  box-shadow: 0 0 12px rgba(139, 0, 0, 0.7);
+}
+
+/* mensaje de alerta para que crees tu usuario */
+.alert {
+  color: #ffd700;
+  border: 1px solid #8b0000;
+  background: rgba(139, 0, 0, 0.2);
+  padding: 10px 20px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}

@@ -6,10 +6,25 @@ import styles from "./CharacterListPage.module.css";
 
 import { useSearchParams } from "react-router-dom"; // para manejar bien la paginación
 
+// para manejar que se haya creado el perfil
+import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
+
 export default function CharacterListPage() {
   // Extraemos los DATOS del Contexto
   const { characters, totalPages, loading, error } =
     useContext(CharacterContext);
+
+  // aquí controlamos que hayan creado usuario
+  const { user } = useUser();
+  const navigate = useNavigate();
+
+  // Si no hay usuario creado, redirige a /user
+  useEffect(() => {
+    if (!user.name.trim()) {
+      navigate("/user", { state: { message: "CREA TU PERFIL PARA ACCEDER AL CHAT ESPECIAL" } });
+    }
+  }, []);
 
   // Extraemos la ACCIÓN (función) del Hook
   const { search } = useCharacterSearch();

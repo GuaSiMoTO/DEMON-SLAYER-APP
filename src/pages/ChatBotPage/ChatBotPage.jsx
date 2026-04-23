@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import askGemini from "../../hooks/useAskGemini"; // tu hook
 import styles from "./ChatBotPage.module.css";
+// para manejar que se haya creado el perfil
+import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ChatBotPage() {
   
@@ -10,8 +13,20 @@ export default function ChatBotPage() {
 
   const chatEndRef = useRef(null);
 
+  // aquí controlamos que hayan creado usuario
+  const { user } = useUser();
+  const navigate = useNavigate();
+
+  // Si no hay usuario creado, redirige a /user
+  useEffect(() => {
+    if (!user.name.trim()) {
+      navigate("/user", { state: { message: "CREA TU PERFIL PARA ACCEDER AL CHAT ESPECIAL" } });
+    }
+  }, []);
+
   // Auto scroll al último mensaje
   useEffect(() => {
+    if (messages.length === 0) return; // no scrollea si no hay mensajes
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 

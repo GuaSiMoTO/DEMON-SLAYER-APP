@@ -71,8 +71,8 @@
   border-radius: 0; /* completamente rectangular */
   padding: 10px 40px;
   cursor: pointer;
-  font-weight: ;
   transition: background-color 0.3s ease, color 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
 }
 
 .button:hover {

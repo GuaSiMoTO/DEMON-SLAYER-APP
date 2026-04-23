@@ -29,7 +29,9 @@ function Navbar() {
 
       {/* USER */}
       <div className={styles.user}>
-        <span>USER</span>
+        <NavLink to="/user">
+            <img className={styles.img} src="/public/portrait.tanjiro.png" alt="tanjiroUser" />
+        </NavLink>
       </div>
 
     </nav>

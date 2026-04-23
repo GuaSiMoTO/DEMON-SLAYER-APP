@@ -3,7 +3,7 @@
   position: sticky; /* dejarlo fijo arriba y top: 0*/
   top: 0;
   z-index: 1000; /* Para que pase por encima de las tarjetas */
-  background: rgba(0, 0, 0, 0.8); /* Un negro con transparencia queda increíble */
+  background: rgba(0, 0, 0, 0.8); /* Un negro con transparencia */
 
   /* Este es el truco Pro: difumina lo que pasa por detrás */
   backdrop-filter: blur(8px);
@@ -41,12 +41,13 @@
   transition: color 0.3s ease;
 }
 
-.user span{
+.user img{
   cursor: pointer;
-  color:white;
-  font-weight: 500;
   transition: color 0.3s ease;
+  width: 45px;
+  filter: brightness(0) drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
 }
+
 
 .menu a:hover,
 .user span:hover {
