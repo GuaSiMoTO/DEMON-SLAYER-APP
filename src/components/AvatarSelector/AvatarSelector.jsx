@@ -1,11 +1,11 @@
 import styles from "./AvatarSelector.module.css";
 
 const AVATARS = [
-  "/public/portrait.tanjiro.png",
-  "/public/portrait.nezuko.png",
-  "/public/portrait.zenitsu.jpg",
-  "/public/portrait.inosuke.jpg",
-  "/public/portrait.akaza.jpg"
+  "/portrait.tanjiro.png",
+  "/portrait.nezuko.png",
+  "/portrait.zenitsu.jpg",
+  "/portrait.inosuke.jpg",
+  "/portrait.akaza.jpg"
 ];
 
 export default function AvatarSelector({ selected, onSelect }) {
