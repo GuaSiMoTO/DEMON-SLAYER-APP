@@ -26,6 +26,7 @@
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
 }
 
+
 /* MENÚ */
 .menu {
   display: flex;
@@ -41,16 +42,55 @@
   transition: color 0.3s ease;
 }
 
-.user img{
+/* imagen del usuario/avatar */
+.img{
   cursor: pointer;
   transition: color 0.3s ease;
   width: 45px;
-  filter: brightness(0) drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+  /* filtro negro para que no se vea el user/avatar */
+  filter: brightness(0) drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)); 
 }
 
+/* para activar el user/avatar a crear el ususario*/
+.imgActive {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: 45px;
+  /* Mantenemos solo el resplandor, eliminamos el brillo 0 */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+}
 
 .menu a:hover,
 .user span:hover {
   color: var(--gold-text);
 }
 
+.user{
+  display: flex;
+  align-items: ; 
+  
+}
+/* Contenedor del link para alinear imagen y texto */
+.userLink {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+/* 2. Ajuste fino del nombre */
+.userName {
+  color: var(--gold-text);
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-block;
+  margin-right: 10px; 
+}
+.img, .imgActive {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}

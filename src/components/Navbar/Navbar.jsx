@@ -1,15 +1,19 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import logo from "../../../public/demon-logo.png"
+import logo from "../../../public/demon-logo.png";
+
+import { useUser } from "../../context/UserContext";
 
 function Navbar() {
+  const { user } = useUser();
+
   return (
     <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.logo}>
         <NavLink to="/">
-          <img src={ logo } alt="Logo" className={styles.logoImg} />
+          <img src={logo} alt="Logo" className={styles.logoImg} />
         </NavLink>
       </div>
 
@@ -26,16 +30,20 @@ function Navbar() {
         </li>
       </ul>
 
-
       {/* USER */}
       <div className={styles.user}>
+        {/* Si existe user.name, muestra el span con el nombre */}
+        {user?.name && <span className={styles.userName}>{user.name}</span>}
         <NavLink to="/user">
-            <img className={styles.img} src="/public/portrait.tanjiro.png" alt="tanjiroUser" />
+          <img
+            className={user.name ? styles.imgActive : styles.img}
+            src={user.name ? user.avatar : "/portrait.tanjiro.png"}
+            alt="tanjiroUser"
+          />
         </NavLink>
       </div>
-
     </nav>
   );
-};
+}
 
 export default Navbar;

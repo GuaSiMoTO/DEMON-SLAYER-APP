@@ -19,7 +19,7 @@
 }
 
 .preview {
-  width: 210px;
+  width: 250px;
   height: 250px;
   border-radius: 50%;
   border: 3px solid var(--gold-text);
@@ -33,7 +33,7 @@
   padding: 12px 16px;
   background: #111;
   border: 1px solid var(--gold-text);
-  color: #ffffff;
+  color: var(--gold-text);
   font-size: 1rem;
   outline: none;
   margin-bottom: 24px;
@@ -79,6 +79,21 @@
   padding: 10px 20px;
   margin-bottom: 16px;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 2.0rem;
   letter-spacing: 1px;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.hint {
+  font-size: 1.5rem;
+  opacity: 0.5;
 }

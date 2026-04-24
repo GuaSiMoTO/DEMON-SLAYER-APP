@@ -1,11 +1,10 @@
 /* CharacterListPage CSS */
 .CharacterListPage {
-  /* Centrado arriba */
   display: flex;
   flex-direction: column;
   align-items: center;     /* Centra horizontalmente */
   justify-content: flex-start; /* Alinea al inicio (arriba) */
-  padding-top: 10px;       /* Espacio desde el borde superior */
+  padding-top: 10px;       
   text-align: center;
 }
 
@@ -13,7 +12,7 @@
 .list-container {
   display: flex;
   flex-wrap: wrap;       /* Permite que los elementos salten de fila */
-  justify-content: center; /* CENTRA los elementos de la última fila */
+  justify-content: center; 
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -34,9 +33,6 @@
   display: flex;
   flex-direction: column;
 }
-
-/* Opcional: Si quieres que las de abajo no se estiren NADA 
-   aunque tengan espacio, esto asegura que mantengan el tamaño de las de arriba */
 .list-container > div:nth-child(n+4) {
   max-width: calc(33.33% - 30px);
 }
@@ -87,7 +83,7 @@
 .pagination-wrapper {
   position: fixed;
   right: 100px;              /* separación del borde derecho */
-  top: 55%;
+  top: 50%;                  /*altura verticalmente */
   transform: translateY(-50%); /* centrado vertical */
   z-index: 1000;
 }
