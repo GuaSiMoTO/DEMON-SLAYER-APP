@@ -64,6 +64,87 @@ El núcleo de la aplicación reside en el hook personalizado useDemonSearch, el 
 
 - Seguridad: Valida la existencia de variables de entorno antes de realizar peticiones.
 
+## SearchBar — componente
+
+Barra de búsqueda que permite al usuario encontrar un personaje
+por su nombre y navegar directamente a su página de detalle.
+
+### Tecnologías usadas
+- `useState` — controla el valor del input en tiempo real
+- `useNavigate` — redirige a `/characterdetail/:name` al buscar
+
+### Comportamiento
+- El texto se convierte automáticamente a mayúsculas mientras se escribe
+- El botón queda deshabilitado si el campo está vacío
+- Pulsar `Enter` también activa la búsqueda
+- `spellCheck` desactivado para evitar subrayados de ortografía
+
+### Fragmento clave
+```jsx
+const handleSend = () => {
+  if (!input.trim()) return;
+  navigate(`/characterdetail/${input.trim()}`);
+};
+```
+
+## ChatBotPage — componente
+
+Página de chat interactivo con IA especializada en el anime Demon Slayer.
+
+### Estado
+- `messages` — historial de mensajes del chat (usuario e IA)
+- `input` — texto que escribe el usuario
+- `loading` — indica si la IA está generando respuesta
+
+### Hooks utilizados
+- `useRef` — auto scroll al último mensaje tras cada respuesta
+- `useEffect` (guard) — redirige a `/user` si el usuario no ha creado su avatar
+- `useNavigate` — navegación programática hacia otras rutas
+- `useMemo` — cuenta las consultas del usuario sin recalcular en cada render
+
+#### useMemo
+
+`useMemo` se utiliza en `ChatBotPage.jsx` para contar cuántas consultas
+ha enviado el usuario durante la sesión actual.
+
+```jsx
+const queryCount = useMemo(() => {
+  return messages.filter(msg => msg.role === "user").length;
+}, [messages]);
+```
+
+En lugar de recontar en cada render, el valor queda memorizado y
+solo se recalcula cuando el array `messages` cambia.
+`queryCount` alimenta el contador en pantalla al lado del input.
+
+### UX del input
+- Texto convertido a mayúsculas automáticamente
+- `spellCheck` desactivado
+- `Enter` activa el envío
+- Botón deshabilitado mientras la IA responde
+- Contador de consultas visible dentro del input
+
+---
+
+## useAskGemini — hook
+
+Función asíncrona que se comunica con la API de Google Gemini
+y devuelve la respuesta en texto plano.
+
+### Configuración
+| Parámetro | Valor |
+|---|---|
+| Modelo | `gemini-3-flash-preview` |
+| API Key | `VITE_API_GEMINI_KEY` en `.env` |
+| Rol | Experto en Demon Slayer, respuestas breves y directas |
+
+### Comportamiento
+- Si el prompt llega vacío, devuelve un mensaje sin llamar a la API
+- Si la respuesta HTTP no es `ok`, lanza un error con el mensaje de Gemini
+- Extrae el texto de `candidates[0].content.parts[0].text`
+
+
+
 ## ⏱️ Registro de Tiempos de Desarrollo
 
 He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker - Chronos` para medir el tiempo dedicado a cada funcionalidad del proyecto.
@@ -77,13 +158,14 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **API** | Refactorizar funciones de llamada a la API | 2h | ✅ Hecho |
 | **API** | Hook llamda a la IA mediante API `useAskGemini` | 2h | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de `Navbar` | 56m | ✅ Hecho |
-| **Interfaz** | Diseño e implementación de `ChatBotPage` | 1h 20m | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `ChatBotPage` | 1h 50m | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de `UserPage` | 1h 10m | ✅ Hecho |
 | **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | ✅ Hecho |
-| **Interfaz** | Creación de tarjetas en `Characterlistpage` | 2h 20m | ✅ Hecho |
+| **Interfaz** | Creación de tarjetas en `CharacterListpage` | 2h 20m | ✅ Hecho |
 | **Interfaz** | Creación de tarjetas en `CharacterDetailpage` | 1h | ✅ Hecho |
 | **Interfaz** | Favicon del proyecto | 7m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
+| **Interfaz** | Barra `SearchBar` y su `CSS` dentro de `CharacterListPage` | 54m | ✅ Hecho |
 | **Layout** | Tarjeta central de `Characterdetailpage` | 1h 40m | ✅ Hecho |
 | **Estilos** | CSS de `ChatBotPage` | 1h | ✅ Hecho |
 | **Estilos** | CSS de `UserPage` | 1h 10m | ✅ Hecho |

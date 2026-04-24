@@ -1,7 +1,10 @@
 import { useState, useEffect, useContext } from "react";
-import { CharacterContext } from "../../context/CharacterContext"; // Importamos el Contexto
+
+import { CharacterContext } from "../../context/CharacterContext"; 
 import useCharacterSearch from "../../hooks/useCharacterSearch";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import SearchBar from "../../components/SearchBar/SearchBar";
+
 import styles from "./CharacterListPage.module.css";
 
 import { useSearchParams } from "react-router-dom"; // para manejar bien la paginación
@@ -22,7 +25,7 @@ export default function CharacterListPage() {
   // Si no hay usuario creado, redirige a /user
   useEffect(() => {
     if (!user.name.trim()) {
-      navigate("/user", { state: { message: "CREA TU PERFIL PARA ACCEDER AL CHAT ESPECIAL" } });
+      navigate("/user", { state: { message: "CREATE YOUR AVATAR TO ACCESS" } });
     }
   }, []);
 
@@ -83,7 +86,7 @@ export default function CharacterListPage() {
                 <CharacterCard key={char.id} character={char} />
               ))}
             </div>
-
+              <SearchBar />
             <div className={styles["pagination-wrapper"]}>
               <div className={styles.pagination}>
                 <button

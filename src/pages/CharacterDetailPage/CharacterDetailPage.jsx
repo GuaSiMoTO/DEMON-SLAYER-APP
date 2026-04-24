@@ -1,9 +1,11 @@
 // pages/CharacterListPage/CharacterListPage.jsx
 import { useEffect, useContext } from "react"; 
 import { useParams } from "react-router-dom";
-import { CharacterContext } from "../../context/CharacterContext"; // Importamos el Contexto
+
+import { CharacterContext } from "../../context/CharacterContext"; 
 import useCharacterSearch from "../../hooks/useCharacterSearch"; 
 import CharacterDetail from "../../components/CharacterDetail/CharacterDetail";
+
 import styles from "./CharacterDetailPage.module.css";
 
 export default function CharacterDetailPage() {

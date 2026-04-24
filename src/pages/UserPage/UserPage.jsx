@@ -12,7 +12,7 @@ export default function UserPage() {
   const [avatar, setAvatar] = useState(user.avatar);
 
   const location = useLocation();
-  const message = location.state?.message; // 👈 recoge el mensaje si viene del chatbot
+  const message = location.state?.message; // recoge el mensaje si viene con mensaje para crear el avatar
 
   const handleSave = () => {
     if (!name.trim()) return alert("Escribe un nombre");

@@ -58,6 +58,9 @@
 
 /* input */
 .inputBox {
+  position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
   display: flex;
   gap: 10px;
@@ -82,6 +85,14 @@
   color: white;
   cursor: pointer;
   transition: 0.3s;
+}
+
+/* contador — al lado del botón, sin caja roja */
+.counter {
+  font-size: 1rem;
+  color: #888;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .inputBox button:hover {

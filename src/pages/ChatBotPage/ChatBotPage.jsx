@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import askGemini from "../../hooks/useAskGemini"; // tu hook
 import styles from "./ChatBotPage.module.css";
 // para manejar que se haya creado el perfil
@@ -6,7 +6,6 @@ import { useUser } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 export default function ChatBotPage() {
-  
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,7 +19,7 @@ export default function ChatBotPage() {
   // Si no hay usuario creado, redirige a /user
   useEffect(() => {
     if (!user.name.trim()) {
-      navigate("/user", { state: { message: "CREA TU PERFIL PARA ACCEDER AL CHAT ESPECIAL" } });
+      navigate("/user", { state: { message: "CREATE YOUR AVATAR TO ACCESS" } });
     }
   }, []);
 
@@ -62,12 +61,28 @@ export default function ChatBotPage() {
     setLoading(false);
   };
 
-  // 🔥 Enter para enviar
+  // Enter para enviar
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSend();
     }
   };
+
+  // ── Contador de consultas con useMemo ──────────────────────────────
+  const queryCount = useMemo(() => {
+    return messages.filter((msg) => msg.role === "user").length;
+  }, [messages]);
+
+  // ── Mensaje de salida al abandonar la página ───────────────────────
+  const [exitMessage, setExitMessage] = useState(null);
+
+  useEffect(() => {
+    return () => {
+      if (queryCount > 0) {
+        setExitMessage(`You made ${queryCount} queries in this session.`);
+      }
+    };
+  }, [queryCount]);
 
   return (
     <main className={styles.chatPage}>
@@ -82,17 +97,13 @@ export default function ChatBotPage() {
           {messages.map((msg, i) => (
             <p
               key={i}
-              className={
-                msg.role === "user" ? styles.user : styles.ai
-              }
+              className={msg.role === "user" ? styles.user : styles.ai}
             >
               {msg.role === "user" ? "> User:" : "> AI:"} {msg.text}
             </p>
           ))}
 
-          {loading && (
-            <p className={styles.ai}>{"\u003e AI: typing..."}</p>
-          )}
+          {loading && <p className={styles.ai}>{"\u003e AI: typing..."}</p>}
 
           <div ref={chatEndRef} />
         </div>
@@ -102,10 +113,13 @@ export default function ChatBotPage() {
           <input
             type="text"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => setInput(e.target.value.toUpperCase())}
             onKeyDown={handleKeyDown}
-            placeholder="Ask something about anime..."
+            placeholder="Ask me about DEMON SLAYER"
+            spellCheck={false}
           />
+          {/* Contador dentro del input a la derecha */}
+          <span className={styles.counter}>{queryCount}</span>
           <button onClick={handleSend} disabled={loading}>
             ➤
           </button>
@@ -113,4 +127,4 @@ export default function ChatBotPage() {
       </div>
     </main>
   );
-};
+}
