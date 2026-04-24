@@ -70,3 +70,95 @@
 .button:hover {
   background-color: var(--gold-text);
 }
+
+@media (max-width: 1401px){
+
+.hero {
+  padding-top: 10px;
+  display: flex;
+
+}
+
+
+/* Ocultar scroll feo */
+.hero-image::-webkit-scrollbar {
+  display: none;
+}
+
+/* Imágenes */
+.hero-image img {
+  width: 250px; /* Aumentado de 200px a 300px */
+}
+
+}
+
+@media(max-width:1160px) {
+/* Imágenes */
+.hero-image img {
+  width: 300px; /* Aumentado de 200px a 300px */
+}
+.hero-image {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 30px;
+}
+
+}
+
+
+@media (max-width:600px) {
+
+.heroTitle {
+  font-size: 1.6rem;
+  color: var(--gold-text); /* El dorado de BLU-RAY */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.heroSubtitle {
+  font-size: 0.8rem;
+  max-width: 400px; /* Evita que el texto se estire demasiado */
+  padding: 0 20px;
+}
+
+/* Contenedor del slider */
+.hero-image {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 20px;
+}
+/* Ocultar scroll feo */
+.hero-image::-webkit-scrollbar {
+  display: none;
+}
+
+/* Imágenes */
+.hero-image img {
+  width: 200px; /* Aumentado de 200px a 300px */
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+/* Imagen centrada destacada */
+.hero-image img:focus,
+.hero-image img:hover {
+  transform: scale(1.25); /* Un poco más de escala para resaltar más el tamaño nuevo */
+  opacity: 1;
+}
+
+/* BUTTON HOMEPAGE */
+.button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
+  margin-bottom: 20px;
+}
+
+
+}
+
+  
