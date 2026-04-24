@@ -143,6 +143,42 @@ y devuelve la respuesta en texto plano.
 - Si la respuesta HTTP no es `ok`, lanza un error con el mensaje de Gemini
 - Extrae el texto de `candidates[0].content.parts[0].text`
 
+---
+## Reporte de Testing
+
+Se ha implementado una suite de pruebas unitarias y de integración utilizando Vitest y React Testing Library para garantizar la robustez de la lógica de negocio, los hooks personalizados y los componentes de la interfaz.
+
+### Resumen de Cobertura
+
+| Archivo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| useAskGemini.test.js | Unit/Integration | Validación de integración con la API de Google Gemini. |
+| useCharacterSearch.test.jsx | Hook/Context | Prueba de lógica de búsqueda y gestión de estado global. |
+| userPage.test.jsx | Component/UI | Verificación de renderizado, eventos de usuario y navegación. |
+
+
+
+### Detalle de los Test Suites
+
+#### 1. Integration: useAskGemini
+Este archivo valida la comunicación con el servicio de IA.
+* **Validación de inputs:** Se asegura de que el hook no realice peticiones innecesarias si el prompt está vacío o es nulo.
+* **Simulación de API (Mocking):** Se utiliza vi.fn() para interceptar las llamadas a fetch y simular respuestas exitosas de Gemini.
+* **Estructura de Datos:** Verifica que las cabeceras (Content-Type: application/json) y el cuerpo del payload enviado cumplan con el formato requerido por la API.
+
+#### 2. Hooks: useCharacterSearch
+Prueba la lógica de filtrado de personajes y su interacción con el CharacterContext.
+* **Gestión de Contexto:** Se utiliza un wrapper para simular el Provider y verificar que funciones como setCharacters y setLoading se ejecuten correctamente.
+* **Manejo de Errores:** Se testea el flujo de excepción cuando la API falla, asegurando que el estado de error se actualice y la carga se detenga.
+* **Variables de Entorno:** Uso de vi.stubEnv para manejar URLs de API dinámicas de forma segura en el entorno de pruebas.
+
+#### 3. Components: UserPage
+Pruebas de comportamiento sobre el perfil de usuario y la interfaz.
+* **Persistencia de Datos:** Comprueba que la función saveUser del contexto sea llamada al interactuar con el formulario.
+* **Lógica de UI:** Valida la transformación automática de texto a mayúsculas en el input de nombre durante el evento de cambio.
+* **Renderizado Condicional:** Verifica que el botón "DELETE USER" aparezca solo cuando existe un usuario activo en el estado global.
+* **Integración con Router:** Uso de MemoryRouter para capturar y validar mensajes recibidos a través del estado de navegación.
+
 
 
 ## ⏱️ Registro de Tiempos de Desarrollo
