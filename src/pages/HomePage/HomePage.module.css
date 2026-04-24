@@ -31,15 +31,10 @@
 /* Contenedor del slider */
 .hero-image {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px; /* Aumentado de 20px a 40px para dar aire a imágenes más grandes */
+  gap: 40px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 70px 40px; 
-  cursor: pointer;
+  padding: 70px 40px;
 }
-
 /* Ocultar scroll feo */
 .hero-image::-webkit-scrollbar {
   display: none;
@@ -47,11 +42,8 @@
 
 /* Imágenes */
 .hero-image img {
-  flex: 0 0 auto;
   width: 300px; /* Aumentado de 200px a 300px */
   height: auto;
-
-  border-radius: 12px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.6;
 }

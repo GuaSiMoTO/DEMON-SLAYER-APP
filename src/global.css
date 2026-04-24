@@ -32,4 +32,5 @@ body {
   background-size: cover;
   color: white;
   min-height: 110vh;
+  overflow-x: hidden;
 }
