@@ -19,7 +19,7 @@ const navigate = useNavigate();
         <h1 className={styles.heroTitle}>DEMON SLAYER'S CHARACTERS</h1>
 
         <p className={styles.heroSubtitle}>
-            DISCOVER THE HUMANS AND DEMONS OF THE SERIE.<br></br>BUILD YOUR OWN FAVORITES LIST USING YOUR USER PROFILE.
+            DISCOVER THE HUMANS AND DEMONS OF THE SERIE.<br></br>CREATE YOUR AVATAR TO ACCESS CONTENT.
         </p>
 
         <div className={styles["hero-image"]}>
