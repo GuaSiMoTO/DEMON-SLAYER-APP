@@ -126,7 +126,7 @@
 @media (max-width:600px) {
 
 .list-container > div {
-  min-width: 400px; 
+  min-width: 380px; 
   
 }
 .pagination-wrapper {
