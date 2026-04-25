@@ -41,6 +41,7 @@ export default function CharacterDetailPage() {
         {!loading && !error && (
           <>
             <div className={styles["list-container"]}>
+                
                 <CharacterDetail key={character.id} character={character} />
             </div>
 

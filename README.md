@@ -208,6 +208,9 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Estilos** | CSS de `Characterlistpage` | 2h 12 | ✅ Hecho |
 | **Estilos** | CSS de `Characterdetailpage` | 40m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Navbar`,`Menu hamburguesa` | 2h | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `HomePage` | 55m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `Mensaje Alert crea tu avatar para acceder` | 20m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `CharacterDetailPage` | 15m | ✅ Hecho |
 | **Testing** | Testing a `useAskGemini`,`useCharacterSearch` y `UserPage` | 1h 50m | ✅ Hecho |
 
 ### 📊 Resumen de Esfuerzo

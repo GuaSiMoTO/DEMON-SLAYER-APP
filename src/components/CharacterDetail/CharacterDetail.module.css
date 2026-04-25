@@ -5,7 +5,7 @@
   align-items: stretch;
   justify-content: center;
   max-width: 1500px;
-  margin: 50px auto;
+  margin: 50px 20px;
   background: rgba(15, 15, 15, 0.95); /* Fondo oscuro profundo */
   border: 1px solid var(--gold-text);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -22,8 +22,8 @@
 }
 
 .character-detail img {
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: auto;
   margin: 20px 10px;
   object-fit: cover;
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -112,13 +112,25 @@
   .character-detail {
     flex-direction: column;
     margin: 20px;
+    align-items: center;
   }
+ 
   .image-container, .name {
+    text-align: center;
     width: 100%;
   }
   .image-container {
-    height: 300px;
+    height: auto;
     border-right: none;
     border-bottom: 2px solid var(--gold-text);
+  }
+
+.character-detail img {
+  width: 70%;
+  height: auto;
+}
+  .button{
+    width: 50%;
+    background-color: var(--gold-text);
   }
 }
