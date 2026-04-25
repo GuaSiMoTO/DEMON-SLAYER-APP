@@ -11,26 +11,19 @@
 
 /* Contenedor que envuelve a todas las tarjetas */
 .list-container {
+  
   display: flex;
   flex-wrap: wrap;       /* Permite que los elementos salten de fila */
   justify-content: center; 
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
-/* Las primeras 3 tarjetas */
-/* Todas las tarjetas (hijos directos) iguales */
+
 .list-container > div {
-  /* Calculamos el ancho para que quepan exactamente 3 por fila */
-  /* (100% / 3) menos el espacio proporcional del gap */
   flex: 0 1 calc(33.33% - 30px); 
-  
-  /* Un ancho mínimo para que no se vean muy flacas en pantallas medianas */
   min-width: 300px; 
-  
-  /* Aseguramos que todas midan lo mismo de alto si el contenido varía */
   display: flex;
   flex-direction: column;
 }
@@ -41,7 +34,7 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  /* Si quieres que todo el fondo sea transparente o tenga una imagen de fondo */
+  /* todo el fondo transparente */
   background: transparent; 
 }
 
@@ -65,12 +58,12 @@
 }
 
 .loading-img {
-  width: 150px;        /* Aquí manejas el tamaño que quieras */
+  width: 150px;       
   height: auto;        /* Mantiene la proporción */
 }
 
 .loading-container p {
-  color: var(--gold-text); /* Dorado para que combine con tus nombres */
+  color: var(--gold-text); 
   font-weight: bold;
   letter-spacing: 2px;
   padding-top: 20px;
@@ -132,8 +125,12 @@
 
 @media (max-width:600px) {
 
+.list-container > div {
+  min-width: 400px; 
+  
+}
 .pagination-wrapper {
-    right: 8px; /* aquí controlas la distancia en móvil */
+    right: 8px; 
   }
 
   /* botones más pequeños */
