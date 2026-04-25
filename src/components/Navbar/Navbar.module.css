@@ -108,11 +108,9 @@
     position: fixed;
     top: 0;
     right: -100%; /* Totalmente fuera de la pantalla a la derecha */
-    width: 280px;  /* Ancho del menú */
+    width: 200px;  /* Ancho del menú */
     height: 100vh;
     background-color: rgba(6, 6, 6, 0.9); /* negro transparente */
-    z-index: 2000; /* Por encima de todo */
-    display: flex;
     flex-direction: column;
     padding: 80px 40px;
     transition: right 0.5s ease-in-out; /* Animación de deslizamiento  */
@@ -149,7 +147,7 @@
 
 .mobile-nav-links a {
     color: var(--gold-text);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     transition: opacity 0.3s;
     text-decoration: none;
@@ -191,13 +189,13 @@
   }
 
   .nav-menu-icon {
-          display: flex; /* Ahora sí se muestra el contenedor */
-          flex-direction: column;
-          justify-content: space-around;
-          width: 30px;
-          height: 25px;
-          cursor: pointer;
-      }
+      display: flex; /* Ahora sí se muestra el contenedor */
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+  }
 .menu-hidden {
         display: none !important;
     }

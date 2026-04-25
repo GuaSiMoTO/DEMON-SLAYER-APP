@@ -1,14 +1,11 @@
 /* LOGO DE LOADING*/
 .loading-container {
-  /* Usamos fixed para que flote por encima de todo y no mueva la paginación */
   position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  
   display: flex;
-  /* IMPORTANTE: Esto pone los elementos en columna (uno debajo de otro) */
   flex-direction: column; 
   justify-content: center; /* Centra verticalmente */
   align-items: center;     /* Centra horizontalmente */

@@ -13,6 +13,7 @@
 }
 
 .heroTitle {
+  margin-top: 20px;
   font-size: 3rem;
   color: var(--gold-text); /* El dorado de BLU-RAY */
   margin-bottom: 15px;
