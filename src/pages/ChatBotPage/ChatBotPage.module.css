@@ -106,7 +106,7 @@
 
 @media (max-width: 768px) {
 .chatContainer {
-    height: 80%; /* Ajustamos distancia entre logo y input */
+    height: 70%; /* Ajustamos distancia entre logo y input */
     display: flex;
     flex-direction: column;
   }
@@ -118,10 +118,10 @@
   }
 
   .inputBox {
-    display: grid; /* cambiar distribucion del input, botoon, contador */
+    display: grid; /* cambiamos distribucion del input, botoon, contador */
     grid-template-columns: 1fr auto;
     gap: 5px;
-    width: 100%;
+    width: 80%;
     padding: 15px 0;
   }
 
@@ -155,6 +155,11 @@
     font-weight: bold;
     margin-top: 5px;
   }
+  /* logo */
+.logo {
+  width: 80px;
+}
+
 
 }
 
