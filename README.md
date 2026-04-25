@@ -211,11 +211,13 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Estilos** | RESPONSIVE de `HomePage` | 55m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Mensaje Alert crea tu avatar para acceder` | 20m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `CharacterDetailPage` | 15m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `ChatBotage` | 15m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `UserPage` |  | ✅ Hecho |
 | **Testing** | Testing a `useAskGemini`,`useCharacterSearch` y `UserPage` | 1h 50m | ✅ Hecho |
 
 ### 📊 Resumen de Esfuerzo
 * **Tiempo total registrado:** ~ h (sumar al final y cambiar este valor)
-* **Última actualización:** 22 de mayo de 2024
+* **Última actualización:** 25 de mayo de 2024
 
 ---
 

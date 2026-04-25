@@ -4,8 +4,7 @@ const AVATARS = [
   "/portrait.tanjiro.png",
   "/portrait.nezuko.png",
   "/portrait.zenitsu.jpg",
-  "/portrait.inosuke.jpg",
-  "/portrait.akaza.jpg"
+  "/portrait.inosuke.jpg"
 ];
 
 export default function AvatarSelector({ selected, onSelect }) {

@@ -2,7 +2,7 @@
   display: flex;
   gap: 20px;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background: #111;
   border: 1px solid var(--gold-text);
@@ -40,4 +40,33 @@
   transform: scale(1.15);
   box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
   transition: 0.2s;
+}
+
+/* --- RESPONSIVE 1024px (2 arriba, 2 abajo) --- */
+@media (max-width: 1024px) {
+  .grid {
+    display: grid; 
+    /* Creamos 2 columnas iguales */
+    grid-template-columns: repeat(2, 1fr); 
+    justify-items: center; /* Centramos los avatares dentro */
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .avatar, .selected {
+    width: 140px; /* Un poco más grandes para llenar el espacio */
+    height: 140px;
+  }
+}
+
+/* --- RESPONSIVE 700px (Todo igual, pero círculos más pequeños) --- */
+@media (max-width: 700px) {
+  .grid {
+    gap: 15px;
+    padding: 15px;
+  }
+  .avatar, .selected {
+    width: 100px; 
+    height: 100px;
+  }
 }
