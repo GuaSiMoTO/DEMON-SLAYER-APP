@@ -58,11 +58,9 @@
 
 /* input */
 .inputBox {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
-  display: flex;
   gap: 10px;
   padding: 10px;
 }
@@ -98,6 +96,59 @@
 .inputBox button:hover {
   background: #b22222;
   box-shadow: 0 0 12px rgba(139, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+.chatContainer {
+    height: 90%; /* Ajustamos distancia entre logo y input */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chatBox {
+    flex: 1; 
+    max-height: 50vh; /* Limitamos para que el teclado no rompa todo */
+  }
+
+  .inputBox {
+    display: grid; /* cambiar distribucion del input, botoon, contador */
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  /* FILA 1: Input y Contador */
+  .inputBox input {
+    grid-column: 1; /* Columna 1 */
+    height: 50px;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .counter {
+    grid-column: 2; /* Columna 2 (derecha) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 5px;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    color: #888;
+  }
+
+  /* FILA 2: Botón abajo ocupando todo */
+  .inputBox button {
+    grid-row: 2; /* Salta a la fila de abajo */
+    grid-column: 1 / span 2; /* Se estira desde la col 1 hasta la 2 */
+    height: 55px; /* Un pelín más alto para que sea fácil de pulsar */
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
 }
 
 

@@ -31,6 +31,6 @@ body {
   background: url('/public/demon-slayer-pattern.jpeg') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  min-height: 110vh;
+  min-height: 150vh;
   overflow-x: hidden;
 }
