@@ -83,7 +83,6 @@
   right: 100px;              /* separación del borde derecho */
   top: 50%;                  /*altura verticalmente */
   transform: translateY(-50%); /* centrado vertical */
-  z-index: 1000;
 }
 
 /* CONTENEDOR BOTONES */
@@ -148,6 +147,10 @@
     gap: 5px;
     padding: 6px;
   }
+  /* HOVER */
+.pagination button:hover {
+  background-color:white;
+}
 
 }
 

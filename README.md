@@ -179,6 +179,37 @@ Pruebas de comportamiento sobre el perfil de usuario y la interfaz.
 * **Renderizado Condicional:** Verifica que el botón "DELETE USER" aparezca solo cuando existe un usuario activo en el estado global.
 * **Integración con Router:** Uso de MemoryRouter para capturar y validar mensajes recibidos a través del estado de navegación.
 
+# ScrollToTop Component
+
+Componente que resetea el scroll al inicio cada vez que el usuario navega a una nueva página o cambia de paginación.
+
+Al navegar entre rutas el scroll **no se resetea automáticamente**. Además, cuando se usa paginación mediante query params (`?page=2`), el `pathname` no cambia — por lo que hay que escuchar también el `search` de la URL.
+
+## Componente
+
+```jsx
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, search]);
+
+  return null;
+}
+
+export default ScrollToTop;
+```
+
+## ¿Qué escucha?
+
+| Trigger | Ejemplo | ¿Resetea scroll? |
+|---|---|---|
+| Cambio de ruta | `/` → `/characterlist` | ✅ |
+| Cambio de página | `?page=1` → `?page=2` | ✅ |
 
 
 ## ⏱️ Registro de Tiempos de Desarrollo
