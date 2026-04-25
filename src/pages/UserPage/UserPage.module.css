@@ -97,3 +97,18 @@
   font-size: 1.5rem;
   opacity: 0.5;
 }
+
+@media (max-width: 670px){
+/* mensaje de alerta para que crees tu usuario */
+.alert {
+  margin:0 20px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.hint {
+  font-size: 1.5rem;
+  
+}
+
+}
