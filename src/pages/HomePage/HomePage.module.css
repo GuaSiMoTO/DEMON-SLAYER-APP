@@ -133,17 +133,16 @@
 
 /* Imágenes */
 .hero-image img {
-  width: 200px; /* Aumentado de 200px a 300px */
+  width: 150px; /* Aumentado de 200px a 300px */
   height: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 /* Imagen centrada destacada */
 .hero-image img:focus,
 .hero-image img:hover {
-  transform: scale(1.25); /* Un poco más de escala para resaltar más el tamaño nuevo */
-  opacity: 1;
+  transform: none; /* Un poco más de escala para resaltar más el tamaño nuevo */
 }
 
 /* BUTTON HOMEPAGE */

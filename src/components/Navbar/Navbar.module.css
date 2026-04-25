@@ -1,16 +1,15 @@
 .navbar {
-  /* para dejar arriba el navbar fijo*/
   position: sticky; /* dejarlo fijo arriba y top: 0*/
   top: 0;
   z-index: 1000; /* Para que pase por encima de las tarjetas */
   background: rgba(0, 0, 0, 0.8); /* Un negro con transparencia */
 
-  /* Este es el truco Pro: difumina lo que pasa por detrás */
+  /* difumina lo que pasa por detrás */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* Para Safari */
 
-/* Una línea sutil abajo para separar */
-  border-bottom: 1px solid rgba(255, 215, 0, 0.4); /* Dorado muy suave */
+/* Una línea sutil abajo para marcar el navbar */
+  border-bottom: 1px solid rgba(255, 215, 0, 0.4);
 
   display: flex;
   justify-content: space-between;
@@ -95,3 +94,110 @@
   object-fit: cover;
 }
 
+/* menu hamburguesa */
+
+/* Esto oculta el icono */
+.nav-menu-icon {
+    display: none;
+}
+
+/* Menú Lateral Móvil */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Totalmente fuera de la pantalla a la derecha */
+    width: 280px;  /* Ancho del menú */
+    height: 100vh;
+    background-color: rgba(6, 6, 6, 0.9); /* negro transparente */
+    z-index: 2000; /* Por encima de todo */
+    display: flex;
+    flex-direction: column;
+    padding: 80px 40px;
+    transition: right 0.5s ease-in-out; /* Animación de deslizamiento  */
+    z-index: 2000;
+}
+
+
+/* Clase que activaremos con JS para mostrar el menú */
+/* menu nav de la hamburguesa */
+.active {
+    right: 0 !important;
+}
+
+/* X de cerrar el menu*/
+.close-menu {
+    position: absolute;
+    top: 13px;
+    right: 32px;
+    font-size: 35px;
+    color: var(--gold-text);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 30px;
+}
+
+.mobile-nav-links a {
+    color: var(--gold-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--dark-red);
+    opacity: 0.7;
+}
+
+@media (max-width: 670px){
+
+/* LOGO */
+.logoImg {
+  height: 40px;
+}
+
+/* LINKS */
+.menu a {
+  display: none;
+}
+/*
+/* para activar el user/avatar a crear el ususario*/
+.imgActive,
+.img  {
+ display: none;
+}
+.userName{
+  display: none;
+}
+
+/* Dibujamos las 3 rayitas del menu de hamburguesa(los <span> que tienes en el HTML) */
+  .nav-menu-icon span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--gold-text); 
+      border-radius: 10px;
+      transition: all 0.3s linear;
+  }
+
+  .nav-menu-icon {
+          display: flex; /* Ahora sí se muestra el contenedor */
+          flex-direction: column;
+          justify-content: space-around;
+          width: 30px;
+          height: 25px;
+          cursor: pointer;
+      }
+.menu-hidden {
+        display: none !important;
+    }
+
+}
