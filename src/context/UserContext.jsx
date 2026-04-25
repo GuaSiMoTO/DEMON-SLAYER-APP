@@ -9,7 +9,7 @@ const DEFAULT_USER = {
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState(() => {
-    // 👇 Al arrancar lee del localStorage si hay datos
+    // Al arrancar lee del localStorage si hay datos
     const saved = localStorage.getItem("user");
     return saved ? JSON.parse(saved) : DEFAULT_USER;
   });

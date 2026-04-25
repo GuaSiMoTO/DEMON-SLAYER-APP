@@ -15,14 +15,14 @@
 
 /* Contenedor específico para el input y el botón (para que sigan en línea) */
 .search-wrapper {
-  display: flex;
-  width: 20%; /* ancho del buscador */
+  display: flex; /* ancho del buscador */
   gap: 10px;
 }
 
 /* input estilo terminal */
 .inputBox input {
   flex: 1;
+  width: 300px;
   padding: 10px;
   background: black;
   border: 1px solid var(--dark-red);
@@ -43,4 +43,11 @@
 .inputBox button:hover {
   background: #b22222;
   box-shadow: 0 0 12px rgba(139, 0, 0, 0.7);
+}
+
+@media (max-width: 670px){
+  .inputBox input {
+  width: 250px;
+  }
+
 }

@@ -1,9 +1,6 @@
 const API_KEY = import.meta.env.VITE_API_GEMINI_KEY; //Traemos la API KEY de .env
 
-
 async function askGemini(answer) {
-
-
   const MODEL = "gemini-3-flash-preview"; 
   const URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
   
@@ -17,7 +14,7 @@ async function askGemini(answer) {
         parts: [
           { text: `Role: Eres un experto y el mejor fan de Demon Slayer anime, te conoces todos los personajes y series.
             Contesta a esta pregunta : ${answer}.
-            Instrucciones: contesta directo, breve, sin saludar y sin ninguna pregunta más.
+            Instrucciones: contesta directo, breve, saluda pero simplemente sin ninguna pregunta más.
             Si te preguntan sobre otra cosa que no sea sobre el anime de DEMON SLAYER, recuerdales que solo contestas sobre el anime` } // prompt aquí! tu mensaje para pasarselo a la IA
         ]
       }

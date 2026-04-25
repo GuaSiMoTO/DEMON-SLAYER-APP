@@ -205,13 +205,14 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Layout** | Tarjeta central de `Characterdetailpage` | 1h 40m | ✅ Hecho |
 | **Estilos** | CSS de `ChatBotPage` | 1h | ✅ Hecho |
 | **Estilos** | CSS de `UserPage` | 1h 10m | ✅ Hecho |
-| **Estilos** | CSS de `Characterlistpage` | 2h 12 | ✅ Hecho |
+| **Estilos** | CSS de `CharacterListpage` | 2h 12 | ✅ Hecho |
 | **Estilos** | CSS de `Characterdetailpage` | 40m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Navbar`,`Menu hamburguesa` | 2h | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `HomePage` | 55m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Mensaje Alert crea tu avatar para acceder` | 20m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `CharacterDetailPage` | 15m | ✅ Hecho |
-| **Estilos** | RESPONSIVE de `ChatBotage` | 15m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `ChatBotage` | 20m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `CharacterLisPage` | | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `UserPage` | 29m | ✅ Hecho |
 | **Testing** | Testing a `useAskGemini`,`useCharacterSearch` y `UserPage` | 1h 50m | ✅ Hecho |
 
