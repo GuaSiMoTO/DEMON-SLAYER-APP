@@ -59,7 +59,7 @@
   }
 }
 
-/* --- RESPONSIVE 700px (Todo igual, pero círculos más pequeños) --- */
+/* Todo igual los avatares mas pequeños */
 @media (max-width: 700px) {
   .grid {
     gap: 15px;

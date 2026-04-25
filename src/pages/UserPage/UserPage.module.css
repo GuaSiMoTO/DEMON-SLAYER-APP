@@ -14,7 +14,7 @@
   color: var(--gold-text);
   font-size: 2rem;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 1);
   letter-spacing: 2px;
 }
 
@@ -25,7 +25,7 @@
   border: 3px solid var(--gold-text);
   object-fit: cover;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px var(--gold-text)(255, 215, 0, 0.4);
+
 }
 
 .input {
@@ -56,13 +56,11 @@
   background: #8b0000;
   color: #ffffff;
   border: none;
-
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
   letter-spacing: 1px;
   transition: 0.3s;
-  opacity: 0.7;
 }
 
 .btn:hover,
@@ -95,18 +93,30 @@
 
 .hint {
   font-size: 1.5rem;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
-@media (max-width: 670px){
+@media (max-width: 700px){
+
+.page h1 {
+  font-size: 1.5rem;
+}
+.preview {
+  width: 180px;
+  height: 180px;
+}
+.input {
+  width: 250px;
+}
+
 /* mensaje de alerta para que crees tu usuario */
 .alert {
   margin:0 20px;
   font-size: 1.8rem;
 }
-
 .hint {
   font-size: 1.5rem;
 }
+
 
 }
