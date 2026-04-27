@@ -8,6 +8,8 @@ Búsqueda avanzada: Funcionalidad para buscar personajes específicos por nombre
 
 Navegación fluida: Uso de react-router-dom para una experiencia de usuario sin recargas.
 
+ChatBot IA: Pregunta a una IA sobre Demon Slayer anime.
+
 Estilos Modulares: Uso de CSS Modules para evitar conflictos de estilos.
 
 Custom Hooks: Lógica de fetching encapsulada y reutilizable.
@@ -15,26 +17,32 @@ Custom Hooks: Lógica de fetching encapsulada y reutilizable.
 ## 📂 Estructura del Proyecto
 ```markdown
 REACT-PROYECTO/
-├── public/
-│   └── demon-logo.png          # Logo principal de la app
-├── src/
-│   ├── components/
-│   │   ├── Navbar/
-│   │   │   ├── Navbar.jsx      # Componente de navegación
-│   │   │   └── Navbar.module.css
-│   │   ├── CharacterCard.jsx   # Card individual de personaje
-│   │   ├── CharacterList.jsx   # Grid/Lista de personajes
-│   │   ├── FilterBar.jsx       # Barra de filtrado por categorías
-│   │   └── SearchBar.jsx       # Input de búsqueda dinámica
-│   ├── context/                # Proveedores de estado global
+public/
+src/
+├── components/               # Contiene los componentes reutilizables (`.jsx` y `.module.css`).
+│   ├── AvatarSelector/
+│   ├── CharacterCard/
+│   ├── CharacterDetail/
+│   ├── Navbar/
+│   ├── ScrollTop/
+│   └── SearchBar/
+├── context/
+├── hooks/                     # Lógica personalizada: la integración con Gemini y la búsqueda de personajes.
+│   ├── useAskGemini.js
+│   └── useCharacterSearch.js
+├── pages/                     # Define las vistas principales de la aplicación y de navegación.
+│   ├── CharacterDetailPage/
+│   ├── CharacterListPage/
+│   ├── ChatBotPage/
+│   ├── HomePage/
+│   └── UserPage/
+├── test/                     # Tesitng de los `hooks` y `UserPage`.
 │   ├── hooks/
-│   │   └── useDemonSearch.js   # Hook para consumo de la API
-│   ├── App.jsx                 # Definición de rutas y layout
-│   ├── main.jsx                # Punto de entrada (Render)
-│   ├── global.css              # Variables y estilos base
-│   └── index.css               # Estilos generales
-├── .env                        # Variables de entorno (API URL)
-.
+│   └── pages/
+├── App.jsx
+├── global.css
+└── main.jsx
+.env                      
 .
 ```
 
@@ -46,7 +54,7 @@ REACT-PROYECTO/
 
 - CSS Modules (Estilos específicos)
 
-- Fetch API (Consumo de datos)
+- Fetch API (Consumo de datos y conexión con Gemini)
 
 ## Configuración del Entorno
 
@@ -220,35 +228,35 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 
 | Categoría | Tarea | Tiempo Invertido | Estado |
 | :--- | :--- | :---: | :---: |
-| **API** | Configuración de archivo `.env` y conexión API | 15m | ✅ Hecho |
+| **API** | Configuración de archivo `.env` y conexión API | 30m | ✅ Hecho |
 | **API** | Consumo y mapeo de datos de la API | 2h 10m | ✅ Hecho |
 | **API** | Refactorizar funciones de llamada a la API | 2h | ✅ Hecho |
 | **API** | Hook llamda a la IA mediante API `useAskGemini` | 2h | ✅ Hecho |
-| **Interfaz** | Diseño e implementación de `Navbar` | 56m | ✅ Hecho |
-| **Interfaz** | Diseño e implementación de `ChatBotPage` | 1h 50m | ✅ Hecho |
-| **Interfaz** | Diseño e implementación de `UserPage` | 1h 10m | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `Navbar` | 1h 30m | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `ChatBotPage` | 2h 40m | ✅ Hecho |
+| **Interfaz** | Diseño e implementación de `UserPage` | 2h 10m | ✅ Hecho |
 | **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | ✅ Hecho |
 | **Interfaz** | Creación de tarjetas en `CharacterListpage` | 2h 20m | ✅ Hecho |
-| **Interfaz** | Creación de tarjetas en `CharacterDetailpage` | 1h | ✅ Hecho |
-| **Interfaz** | Favicon del proyecto | 7m | ✅ Hecho |
+| **Interfaz** | Creación de tarjetas en `CharacterDetailpage` | 2h | ✅ Hecho |
+| **Interfaz** | Favicon del proyecto | 15m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
 | **Interfaz** | Barra `SearchBar` y su `CSS` dentro de `CharacterListPage` | 54m | ✅ Hecho |
-| **Layout** | Tarjeta central de `Characterdetailpage` | 1h 40m | ✅ Hecho |
-| **Estilos** | CSS de `ChatBotPage` | 1h | ✅ Hecho |
+| **Layout** | Tarjeta central de `Characterdetailpage` | 2h 40m | ✅ Hecho |
+| **Estilos** | CSS de `ChatBotPage` | 1h 30m | ✅ Hecho |
 | **Estilos** | CSS de `UserPage` | 1h 10m | ✅ Hecho |
 | **Estilos** | CSS de `CharacterListpage` | 2h 12 | ✅ Hecho |
-| **Estilos** | CSS de `Characterdetailpage` | 40m | ✅ Hecho |
+| **Estilos** | CSS de `Characterdetailpage` | 1h | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Navbar`,`Menu hamburguesa` | 2h | ✅ Hecho |
-| **Estilos** | RESPONSIVE de `HomePage` | 55m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `HomePage` | 1h 30m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Mensaje Alert crea tu avatar para acceder` | 20m | ✅ Hecho |
-| **Estilos** | RESPONSIVE de `CharacterDetailPage` | 15m | ✅ Hecho |
-| **Estilos** | RESPONSIVE de `ChatBotage` | 20m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `CharacterDetailPage` | 30m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `ChatBotage` | 45m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `CharacterLisPage` | 30m | ✅ Hecho |
-| **Estilos** | RESPONSIVE de `UserPage` | 29m | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `UserPage` | 35m | ✅ Hecho |
 | **Testing** | Testing a `useAskGemini`,`useCharacterSearch` y `UserPage` | 1h 50m | ✅ Hecho |
 
 ### 📊 Resumen de Esfuerzo
-* **Tiempo total registrado:** ~ h (sumar al final y cambiar este valor)
+* **Tiempo total registrado:** ~ 26 h 
 * **Última actualización:** 25 de mayo de 2024
 
 ---
