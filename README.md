@@ -1,6 +1,36 @@
 # Demon Slayer App 👹⚔️
 ¡Bienvenido a la Demon Slayer App! Una aplicación web construida con React JS y Vite que consume la API de Kimetsu no Yaiba para mostrar información detallada sobre los personajes de la serie.
 
+## Instalación y Primeros Pasos
+
+### Prerrequisitos
+- Node.js (versión 18 o superior)
+- npm o yarn
+
+### Instalación
+```bash
+# Clona el repositorio
+git clone <url-del-repo>
+
+# Entra al directorio
+cd react-proyecto
+
+# Instala dependencias
+npm install
+
+# Crea archivo .env en la raíz
+
+Para que la aplicación funcione correctamente, necesitas configurar la URL de la API. Crea un archivo .env en la raíz del proyecto:
+ 
+VITE_DEMON_SLAYER_API=https://www.demonslayer-api.com/api/v1/characters
+VITE_DEMON_SLAYER_API=https://www.demonslayer-api.com/api/v1/characters
+VITE_API_GEMINI_KEY=tu-api-key-de-gemini
+
+# Ejecuta en desarrollo
+npm run dev
+```
+
+
 ## Características
 Listado de personajes: Navegación paginada para explorar todos los personajes.
 
@@ -55,12 +85,6 @@ src/
 - CSS Modules (Estilos específicos)
 
 - Fetch API (Consumo de datos y conexión con Gemini)
-
-## Configuración del Entorno
-
-Para que la aplicación funcione correctamente, necesitas configurar la URL de la API. Crea un archivo .env en la raíz del proyecto:
- 
-VITE_DEMON_SLAYER_API=https://www.demonslayer-api.com/api/v1/characters
 
 ## Lógica Principal: useDemonSearch
 
@@ -257,7 +281,7 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 
 ### 📊 Resumen de Esfuerzo
 * **Tiempo total registrado:** ~ 40 h 
-* **Última actualización:** 25 de mayo de 2024
+* **Última actualización:**  27 de abril de 2024
 
 ---
 
