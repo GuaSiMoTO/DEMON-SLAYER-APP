@@ -256,7 +256,7 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Testing** | Testing a `useAskGemini`,`useCharacterSearch` y `UserPage` | 1h 50m | ✅ Hecho |
 
 ### 📊 Resumen de Esfuerzo
-* **Tiempo total registrado:** ~ 26 h 
+* **Tiempo total registrado:** ~ 40 h 
 * **Última actualización:** 25 de mayo de 2024
 
 ---
