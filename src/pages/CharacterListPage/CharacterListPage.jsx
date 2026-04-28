@@ -18,7 +18,7 @@ export default function CharacterListPage() {
   const { characters, totalPages, loading, error } =
     useContext(CharacterContext);
 
-  // aquí controlamos que hayan creado usuario
+  // para controlar que hayan creado usuario
   const { user } = useUser();
   const navigate = useNavigate();
 

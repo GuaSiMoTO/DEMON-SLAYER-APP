@@ -253,24 +253,24 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | Categoría | Tarea | Tiempo Invertido | Estado |
 | :--- | :--- | :---: | :---: |
 | **API** | Configuración de archivo `.env` y conexión API | 30m | ✅ Hecho |
-| **API** | Consumo y mapeo de datos de la API | 2h 10m | ✅ Hecho |
-| **API** | Refactorizar funciones de llamada a la API | 2h | ✅ Hecho |
-| **API** | Hook llamda a la IA mediante API `useAskGemini` | 2h | ✅ Hecho |
+| **API** | Consumo y mapeo de datos de la API | 1h 10m | ✅ Hecho |
+| **API** | Refactorizar funciones de llamada a la API | 1h | ✅ Hecho |
+| **API** | Hook llamda a la IA mediante API `useAskGemini` | 1h | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de `Navbar` | 1h 30m | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de `ChatBotPage` | 2h 40m | ✅ Hecho |
 | **Interfaz** | Diseño e implementación de `UserPage` | 2h 10m | ✅ Hecho |
-| **Interfaz** | Homepage: Imagen principal y sección de inicio | 2h 44m | ✅ Hecho |
+| **Interfaz** | Homepage: Imagen principal y sección de inicio | 1h 44m | ✅ Hecho |
 | **Interfaz** | Creación de tarjetas en `CharacterListpage` | 2h 20m | ✅ Hecho |
 | **Interfaz** | Creación de tarjetas en `CharacterDetailpage` | 2h | ✅ Hecho |
 | **Interfaz** | Favicon del proyecto | 15m | ✅ Hecho |
 | **Interfaz** | Cambio de logo en navbar (versión sin fondo) | 15m | ✅ Hecho |
 | **Interfaz** | Barra `SearchBar` y su `CSS` dentro de `CharacterListPage` | 54m | ✅ Hecho |
-| **Layout** | Tarjeta central de `Characterdetailpage` | 2h 40m | ✅ Hecho |
+| **Layout** | Tarjeta central de `Characterdetailpage` | 1h 40m | ✅ Hecho |
 | **Estilos** | CSS de `ChatBotPage` | 1h 30m | ✅ Hecho |
 | **Estilos** | CSS de `UserPage` | 1h 10m | ✅ Hecho |
-| **Estilos** | CSS de `CharacterListpage` | 2h 12 | ✅ Hecho |
+| **Estilos** | CSS de `CharacterListpage` | 1h 12 | ✅ Hecho |
 | **Estilos** | CSS de `Characterdetailpage` | 1h | ✅ Hecho |
-| **Estilos** | RESPONSIVE de `Navbar`,`Menu hamburguesa` | 2h | ✅ Hecho |
+| **Estilos** | RESPONSIVE de `Navbar`,`Menu hamburguesa` | 1h | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `HomePage` | 1h 30m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `Mensaje Alert crea tu avatar para acceder` | 20m | ✅ Hecho |
 | **Estilos** | RESPONSIVE de `CharacterDetailPage` | 30m | ✅ Hecho |
@@ -280,7 +280,7 @@ He utilizado `Trello` para el seguimiento y una extensión llamada `Time Tracker
 | **Testing** | Testing a `useAskGemini`,`useCharacterSearch` y `UserPage` | 1h 50m | ✅ Hecho |
 
 ### 📊 Resumen de Esfuerzo
-* **Tiempo total registrado:** ~ 40 h 
+* **Tiempo total registrado:** ~ 25 h 
 * **Última actualización:**  27 de abril de 2024
 
 ---
